@@ -11,41 +11,23 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Notes Demo {% block title %}{% endblock %}</title>
-
-    <link rel="icon" href="/static/images/note.svg">
+	<title>The negachin!! {% block title %}{% endblock %}</title>
 
     <script src="/static/js/utils.js"></script>
 
-    <link rel="stylesheet" href="/static/css/reset.css">
-    <link rel="stylesheet" href="/static/css/messages.css">
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
 <body>
 
     <header>
-        <a href="/">
-            Notes Demo
-        </a>
-
-        <nav>
-            <a href="/">All Notes</a>
-            <a href="/">Link</a>
-            <a href="/">Link</a>
-        </nav>
+        <div id="user">
+        <img src="" alt="" id="profile">
+        <p id="name"></p>
+        </div>
     </header>
 
-    {# Show flash messages from any previous events #}
-    {% include "partials/messages.jinja" %}
-
-    <main>
-
-        {% block content %}
-        {% endblock %}
-
-    </main>
-
+    <main></main>
 </body>
 
 </html>

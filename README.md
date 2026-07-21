@@ -2,11 +2,11 @@
 
 ## Project Description
 
-This is an app that ...
+This is an app that allows easy tracking of computers in RAD at a glance
 
 The app has the following key features:
-- Feature one
-- Feature two
+- Efficient UI that allows as much visibility of device status as possible with minimal space
+- Usability
 - Feature three
 - ...
 
