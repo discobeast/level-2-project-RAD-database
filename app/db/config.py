@@ -102,6 +102,42 @@ class deviceTable:
     INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD20257', 'Toshiba Portege X3OT-E', 5, NULL, NULL, 1);
     """
 
+class wordDoneTable:
+
+    NAME = "work_done"
+
+    SCHEMA = """
+
+    """
+
+    SEED_DATA = """
+
+    """
+
+class statusTable:
+
+    NAME = "status"
+
+    SCHEMA = """
+
+    """
+
+    SEED_DATA = """
+    
+    """
+
+class checksTable:
+
+    NAME = "checks"
+
+    SCHEMA = """
+
+    """
+
+    SEED_DATA = """
+    
+    """
+
 # Add more table classes here...
 
 
