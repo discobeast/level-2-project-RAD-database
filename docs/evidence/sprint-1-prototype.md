@@ -9,6 +9,18 @@ Develop a design for the database and a UI prototype that simulates the key func
 
 **Edit these goals as needed**
 
+<!-- - Design the database:
+    - Tables
+    - Fields / types
+    - Primary keys
+    - Default / nullable values
+    - Relationships (foreign keys)
+- Design the UI
+    - Key pages
+    - User interactions and 'flow'
+    - Page layouts / features
+    - Colour palette
+    - Etc. -->
 - Design the database:
     - Tables
     - Fields / types
@@ -25,22 +37,27 @@ Develop a design for the database and a UI prototype that simulates the key func
 
 ## Initial Database Design
 
-Replace this text with notes regarding the DB design.
 
-![DB Design](screenshots/placeholder.png)
+Users will be authenticated with a 7 character pregenerated code whereas they will assign themselves a name. This is required solely to track who last worked on and assign names to notes left on computers at rad.
+Currently the computer table has various boolean values to describe any initial observations and the state of the computer
+User last used computers will be stored as the computer ID and the last worked on date stored as plaintext DD/MM/YYYY
 
+![DB Design](<screenshots/Screenshot 2026-08-04 140943.png>)
 
 ### Required Data Input
 
-Replace this text with a description of what data will be input, and where / how it will be obtained.
+My database will take inputs for users as their preferred name/username
+For computers users will be able to add computers to the database with their RAD id and then provide information on the state of the computer via forms.
 
 ### Required Data Output
 
-Replace this text with a description of the outputs for the system - what types of data will be displayed?
+The output for users will be their last used device and for computers it will be the table values describing the status of the computer and the ID of the computer.
+Other data outputs will be
 
 ### Required Data Processing
 
-Replace this text with a description of how the data will be processed to achieve the desired output(s) - any processes / formulae?
+Rows like "notes" and "need" will contain multiple values which will be split and merged with a python algorithm.
+States are stored as a number from 0 to 3 which will then be translated to an actual description of the state of the device              
 
 
 ## UI 'Flow'
@@ -49,15 +66,15 @@ The first stage of prototyping was to explore how the UI might 'flow' between st
 
 This Figma demo shows the initial design for the UI 'flow':
 
-**FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT**
+**FIGMA FLOW - https://design.penpot.app/#/view?file-id=4ff7ff5f-2875-80f9-8008-5a6523c53270&page-id=4ff7ff5f-2875-80f9-8008-5a6523c53271&section=interactions&index=0&share-id=81f57451-85cc-819d-8008-7e6d7044ff9e**
 
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
+I gave my inital flow to one of my stakeholders (Mr taylor)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+Mr taylor
 
 *IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
 
@@ -68,15 +85,16 @@ The next stage of prototyping was to develop the layout for each screen of the U
 
 This Figma demo shows the initial layout design for the UI:
 
-*FIGMA PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+![Alt text](<Screenshot 2026-08-25 132619.png>)
 
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
+given to stakeholders in a mobile format
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+Mr taylor has given feedback that he would much rather checkboxes and dropdowns to text inputs due to the difficulty
+of submitting text on mobile. 
 
 *FIGMA IMPROVED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
 

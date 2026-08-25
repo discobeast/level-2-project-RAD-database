@@ -2,7 +2,7 @@
 
 ## Identified Problem or Need
 
-In RAD is has been tedious to keep track of all the devices, who last worked on what, and what has been acomplished per device
+In RAD is has been tedious to keep track of all the devices, who last worked on what, and what has been acomplished towards any given device
 
 
 ## End-User Requirements
@@ -12,80 +12,85 @@ made on any given computer.
 
 My program should allow the visibility of the progress made on all devices in RAD at a glance and provide the ability to more accurately track who last worked on any given device.
 
+requirements:
+    Single view showing everything important as soon as the app opens.
+    
+    Clearly shows what needs to be done vs. what has already been done.
+
+    Should let someone pick up a job where another person left off (e.g. after being away) without redoing completed work
+
+    ability to "drill down" into details from the dashboard
+
+    Must be quick and easy to use (minimal time spent on data entry/documentation)
+
+    Tick boxes and drop-down menus for interfaces
+
+    common components (battery, ram, base screws, ect)
+    should have quick select options.
+
 ## Proposed Solution
 
-I indend to create a website which, when viewed on mobile, allows the user easily and immediately view the status of all devices regestered
-or filter them based on specific cases (such as; "Currently being worked on", "Not started", "Finished", "Unfinished" or "Bricked")
-This website should also be able to provide information on who last worked on a specific device and notes left by past techs.
+The main menu will be a minimal interface with a large list of all the currently being worked on devices at rad, with indicators allowing quick comprehension of the statuses of any given device at a glance.
+
+Each device will have a page where a user can add notes or request parts and update the status of the device. Notably each device should have a indicator of who last worked on it.
+
+Due to this the site will have the ability to register and keep track of users, to allow them to check into working on a device.
 
 # Relevant Implications
 
-## NAME OF IMPLICATION 1
+## Usability
 
-Replace this text with a clear explanation of what the implication means.
-
-### Relevance to the System
-
-Replace this text with an explanation of why the implication is relevant to this particular project.
-
-### Impact / Considerations
-
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
-
-
-
-## NAME OF IMPLICATION 2
-
-Replace this text with a clear explanation of what the implication means.
+A website with good usability would allow anyone to navigate and use it effectively.
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+A system that is confusing or frustrating will fail or inhibit it's users.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+The website will need to follow the usability heuristics.
+It will need to follow recognised conventions for websites (e.g. plus icon, save icon)
+System status should be easily visible to minimise frustration.
 
 
 
-## NAME OF IMPLICATION 3
+## Accessibility
 
-Replace this text with a clear explanation of what the implication means.
+The website should be usable by as many people as possible regardless of ability or device.
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+The website must be usable on multiple different devices
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+The website must be easily usable on multiple different devices, for convenience.
 
 
 
-## NAME OF IMPLICATION 4
+## End-User
 
-Replace this text with a clear explanation of what the implication means.
+The End-Users are the people who will be using the website in practice
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+?
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+My website must conform to the desires presented by the End-Users rather than what I see fit.
 
 
+## Fuctionality
 
-## NAME OF IMPLICATION 5
-
-Replace this text with a clear explanation of what the implication means.
+Ability for website to function
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+A website without fuction is infinitely more useless then a website without aesthetics.
 
 ### Impact / Considerations
-
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+The website will need to be as functional as possible to align with the majorily practicality focused End-Users
+This means the website will be focused towards being seamless functionality wise.
 
 
