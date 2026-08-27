@@ -21,97 +21,94 @@ class userTable:
 
     SCHEMA = """
         CREATE TABLE users (
-            id               INTEGER PRIMARY KEY AUTOINCREMENT,
-            name,
-            code             TEXT    UNIQUE
-                                    NOT NULL,
-            last_device      TEXT    REFERENCES devices (id),
-            last_device_date TEXT
+            id   INTEGER PRIMARY KEY AUTOINCREMENT,
+            code TEXT    UNIQUE,
+            name TEXT
         );
     """
 
     SEED_DATA = """
-        INSERT INTO users (
-                            id,
-                            name,
-                            code,
-                            last_device,
-                            last_device_date
-                        )
-                        VALUES (
-                            1,
-                            'Jesse',
-                            'EF45A',
-                            'RAD1234',
-                            NULL
-                        );
-
-        INSERT INTO users (
-                            id,
-                            name,
-                            code,
-                            last_device,
-                            last_device_date
-                        )
-                        VALUES (
-                            2,
-                            'Zander',
-                            'EGQ3',
-                            'RAD1861',
-                            NULL
-                        )
+        INSERT INTO users (id, code, name) 
+            VALUES (1, 'ALE2J', 'Zander'),
+            (2, 'KWJ15', 'Ellis'),
+            (3, 'U4H34', 'Jesse'),
+            (4, 'IWGR1', 'Zach')
     """
 
 class deviceTable:
 
-    NAME = "users"
+    NAME = "devices"
 
     SCHEMA = """
         CREATE TABLE devices (
-            id                TEXT    PRIMARY KEY,
-            model             TEXT,
-            state             INTEGER,
-            replaced_parts    TEXT,
-            notes             TEXT,
-            last_worked_on_by INTEGER REFERENCES users (id) 
+            id    TEXT PRIMARY KEY,
+            model TEXT
         );
     """
 
     SEED_DATA = """
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD1234', 'Tobishia thinkpad', 1, 'wigga', 'Jesse: What the actual shit', 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD1861', 'Chat AI', 3, 'RAM', 'Zander: I am gay, Jesse: Heh', 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14022', 'HP Elitebook x360 1030 g4', 4, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14023', 'HP Elitebook x360 1030 g4', 4, NULL, NULL, 2);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14024', 'HP Elitebook x360 1030 g4', 2, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14025', 'HP Elitebook x360 1030 g4', 0, NULL, NULL, 2);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14027', 'HP Elitebook x360 1030 g4', 3, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14029', 'HP Elitebook x360 1030 g4', 2, NULL, NULL, 2);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14030', 'HP Elitebook x360 1030 g4', 4, NULL, NULL, 2);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14038', 'HP Elitebook x360 1030 g4', 5, NULL, NULL, 2);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14053', 'HP Elitebook x360 1030 g4', 5, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14057', 'HP Elitebook x360 1030 g4', 4, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14058', 'HP Elitebook x360 1030 g4', 5, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14101', 'HP Elitebook x360 1030 g4', 1, NULL, NULL, 2);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14116', 'HP Elitebook x360 1030 g4', 1, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14117', 'HP Elitebook x360 1030 g4', 1, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD14118', 'HP Elitebook x360 1030 g4', 0, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD20253', 'Toshiba Portege X3OL-J', 5, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD20254', 'Toshiba Portege X3OL-J', 5, NULL, NULL, 2);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD20255', 'Toshiba Portege X3OL-J', 0, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD20256', 'Toshiba Portege X3OL-J', 3, NULL, NULL, 1);
-    INSERT INTO devices (id, model, state, replaced_parts, notes, last_worked_on_by) VALUES ('RAD20257', 'Toshiba Portege X3OT-E', 5, NULL, NULL, 1);
+        INSERT INTO devices (id, model) 
+            VALUES ('RAD14022', 'HP Elitebook x360 1030 g4'),
+            ('RAD14023', 'HP Elitebook x360 1030 g4'),
+            ('RAD14024', 'HP Elitebook x360 1030 g4'),
+            ('RAD14025', 'HP Elitebook x360 1030 g4'),
+            ('RAD14027', 'HP Elitebook x360 1030 g4'),
+            ('RAD14029', 'HP Elitebook x360 1030 g4'),
+            ('RAD14030', 'HP Elitebook x360 1030 g4'),
+            ('RAD14038', 'HP Elitebook x360 1030 g4'),
+            ('RAD14053', 'HP Elitebook x360 1030 g4'),
+            ('RAD14057', 'HP Elitebook x360 1030 g4'),
+            ('RAD14058', 'HP Elitebook x360 1030 g4'),
+            ('RAD14101', 'HP Elitebook x360 1030 g4'),
+            ('RAD14116', 'HP Elitebook x360 1030 g4'),
+            ('RAD14117', 'HP Elitebook x360 1030 g4'),
+            ('RAD14118', 'HP Elitebook x360 1030 g4'),
+            ('RAD20253', 'Toshiba Portege X3OL-J'),
+            ('RAD20254', 'Toshiba Portege X3OL-J'),
+            ('RAD20255', 'Toshiba Portege X3OL-J'),
+            ('RAD20256', 'Toshiba Portege X3OL-J'),
+            ('RAD20257', 'Toshiba Portege X3OT-E'),
+            ('RAD20258', 'Toshiba Portege X3OT-E'),
+            ('RAD20259', 'Toshiba Portege X3OT-E'),
+            ('RAD20260', 'Toshiba Portege X3OT-E'),
+            ('RAD20261', 'Toshiba Portege X3OT-E'),
+            ('RAD20262', 'Toshiba Portege X3OT-E'),
+            ('RAD20263', 'Toshiba Portege X3OL-J'),
+            ('RAD20264', 'Toshiba Portege X3OT-E'),
+            ('RAD20265', 'Toshiba Portege X3OT-E'),
+            ('RAD20266', 'Toshiba Portege X3OT-E'),
+            ('RAD20267', 'Toshiba Portege X3OT-E'),
+            ('RAD21320', 'Dell Precision 5540'),
+            ('RAD21318', 'Dell Precision 5540'),
+            ('RAD21321', 'Dell Precision 5540'),
+            ('RAD21315', 'Dell Precision 5540'),
+            ('RAD21316', 'Dell Precision 5540'),
+            ('RAD21319', 'Dell Precision 5540'),
+            ('RAD21309', 'Dell Latitude 7210'),
+            ('RAD21310', 'Dell Latitude 7210'),
+            ('RAD21311', 'Dell Latitude 7210'),
+            ('RAD21462', 'Dell Latitude 7210')
     """
 
-class wordDoneTable:
+class workDoneTable:
 
     NAME = "work_done"
 
     SCHEMA = """
-
+        CREATE TABLE work_done (
+            id        INTEGER PRIMARY KEY AUTOINCREMENT,
+            computer  TEXT    REFERENCES computers (id),
+            user      INTEGER REFERENCES users (id),
+            notes     TEXT,
+            timestamp TEXT
+        );
     """
 
     SEED_DATA = """
-
+        INSERT INTO work_done (id, computer, user, notes, timestamp) 
+            VALUES (1, 'RAD14025', 2, NULL, '9:00'),
+             (2, 'RAD14053', 1, NULL, '5:21'),
+             (3, 'RAD14022', 2, NULL, '00:30')
     """
 
 class statusTable:
@@ -119,23 +116,40 @@ class statusTable:
     NAME = "status"
 
     SCHEMA = """
-
+        CREATE TABLE status (
+            id       INTEGER PRIMARY KEY AUTOINCREMENT,
+            computer TEXT    REFERENCES computers (id),
+            user     INTEGER REFERENCES users (id),
+            outcome  INTEGER NOT NULL,
+            notes    TEXT,
+            check_id INTEGER REFERENCES checks (id) 
+        );
     """
 
     SEED_DATA = """
-    
+        INSERT INTO status (id, computer, user, outcome, notes, check_id) 
+            VALUES (1, 'RAD14022', 2, 1, 'Works', 1),
+             (2, 'RAD14022', 2, 0, 'No battery', 5)
     """
 
 class checksTable:
-
     NAME = "checks"
 
     SCHEMA = """
-
+        CREATE TABLE checks (
+            id   INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT
+        );
     """
 
     SEED_DATA = """
-    
+        INSERT INTO checks (id, name) 
+        VALUES (1, 'Physical damage'),
+         (2, 'Charges with charger'),
+         (3, 'OS'),
+         (4, 'BIOS accessable'),
+         (5, 'Boots on battery'),
+         (6, 'Boots with charger')
     """
 
 # Add more table classes here...
@@ -159,6 +173,9 @@ class checksTable:
 
 TABLES = [
     userTable,
-    deviceTable
+    deviceTable,
+    checksTable,
+    statusTable,
+    workDoneTable
 ]
 
