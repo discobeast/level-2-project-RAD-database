@@ -20,7 +20,10 @@ app = Flask(__name__)
 # App Routes Handlers
 #===========================================================
 
-
+app.route("/", methods=['GET','POST']) 
+def index():
+    
+    return
 
 #===========================================================
 # Configure the app

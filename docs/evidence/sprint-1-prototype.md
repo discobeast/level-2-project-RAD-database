@@ -74,7 +74,8 @@ I gave my inital flow to one of my stakeholders (Mr taylor)
 
 ### Changes / Improvements
 
-Mr taylor
+Mr taylor wondered why a settings menu was needed.
+There are not enough settings to require a menu so the menu has been removed
 
 *IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
 
@@ -85,7 +86,7 @@ The next stage of prototyping was to develop the layout for each screen of the U
 
 This Figma demo shows the initial layout design for the UI:
 
-![Alt text](<Screenshot 2026-08-25 132619.png>)
+![Alt text](<screenshots/Screenshot 2026-08-25 132619.png>)
 
 ### Testing
 
@@ -95,6 +96,9 @@ given to stakeholders in a mobile format
 
 Mr taylor has given feedback that he would much rather checkboxes and dropdowns to text inputs due to the difficulty
 of submitting text on mobile. 
+
+Because of this I will be changing the per-device menu to a simpler y/n list of questions format for the initialization of the device,
+and then using a more streamlined ui for simpler changes (Like marking the device as scrap or given out)
 
 *FIGMA IMPROVED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
 

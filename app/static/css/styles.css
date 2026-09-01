@@ -1,0 +1,39 @@
+:root {
+    --text: #dcdcfe;
+    --background: #26262b;
+    --primary: #787ffc;
+    --secondary: #6b049a;
+    --accent: #e210f9;
+}
+
+
+
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 6fr;
+    grid-template-areas: 
+    'header'
+    'stats'
+    'devices';
+    header{
+        grid-area: header;
+    }
+
+    #graphs{
+        grid-area: device_list;
+    }
+
+    #devices{
+        grid-area: devices;
+        display: flex;
+        flex-direction: column;
+        gap: 10px ;
+        
+        .device:not(:last-child){
+            border-bottom:1px solid gray ;
+        }
+        
+    }
+
+}
