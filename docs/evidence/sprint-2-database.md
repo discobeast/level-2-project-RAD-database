@@ -12,13 +12,13 @@ Implement the database, populated with test data. Create queries that retrieve t
 - Implement the database
 - Add test data to the database
 - Create the following web pages:
-    - Home pages showing...
-    - Details page for ...
-    - Etc.
+    - Home page showing all devices in network
+    - Test pages for each type of check
+    - Final checklist for device
 - Develop SQL database queries to:
-    - Retrieve all ...
-    - Retrieve specific ...
-    - Etc.
+    - return a numerical status once a predetermined set of conditions has been met within a device's data
+    - manage the login of users and store user actions
+    - filter a list of devices, given queries
 
 
 ## Testing FEATURE NAME HERE

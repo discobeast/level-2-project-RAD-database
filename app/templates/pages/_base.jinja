@@ -47,11 +47,11 @@
             </div>
 
             <div id="devices">
-                {% for {{ device }} in {{ devices }} %}
+                {% for device in devices %}
                     <div class="device">
-                        <div class="state state-{{ device.state }}"></div>
-                        <p>{{ device.id }}</p>
-                        <p>{{ device.model }}</p>
+                        <div class="icon"></div>
+                        <p class="code">{{device.id}}</p>
+                        <p class="model">{{device.model}}</p>
                     </div>
                 {% endfor %}
             </div>

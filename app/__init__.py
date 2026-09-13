@@ -20,10 +20,12 @@ app = Flask(__name__)
 # App Routes Handlers
 #===========================================================
 
-app.route("/", methods=['GET','POST']) 
+@app.route("/", methods=['GET','POST']) 
 def index():
-    
-    return
+    with connect_db() as db:
+        query = """SELECT devices.id, devices.model FROM devices ORDER BY devices.model DESC"""
+        devices = db.execute(query).fetchall()
+    return render_template("pages/_base.jinja",devices=devices)
 
 #===========================================================
 # Configure the app

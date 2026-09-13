@@ -30,9 +30,33 @@ body{
         flex-direction: column;
         gap: 10px ;
         
-        .device:not(:last-child){
-            border-bottom:1px solid gray ;
+        .device {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .icon{
+                border-radius: 20px;
+                height: 20px;
+                width: 20px;
+            }
+            &:not(:last-child){
+                border-bottom:1px solid gray ;
+            }
         }
+
+        .status-0 {
+            background-color: grey;
+        }
+
+        .status-1 {
+            background-color: green;
+        }
+
+        .status-2 {
+            background-color: red;
+        }
+
+        
         
     }
 
