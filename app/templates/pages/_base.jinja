@@ -29,34 +29,8 @@
     </header>
 
     <main>
-
-        <div id="graphs">
-            <h1>TBD</h1>
-        </div>
-
-        <div id="device_list">
-
-            <div id="bar">
-                <div id="filter">
-                    <img src="" alt="" id="filter_icon">
-                    <p class="filter_option">filter-1</p>
-                    <p class="filter_option">filter-2</p>
-                    <p class="filter_option">filter-3</p>
-                </div>
-                <img src="" alt="" id="add">
-            </div>
-
-            <div id="devices">
-                {% for device in devices %}
-                    <div class="device">
-                        <div class="icon"></div>
-                        <p class="code">{{device.id}}</p>
-                        <p class="model">{{device.model}}</p>
-                    </div>
-                {% endfor %}
-            </div>
-
-        </div>
+    {% block content %}
+    {% endblock %}
     </main>
 </body>
 

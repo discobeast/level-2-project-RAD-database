@@ -25,7 +25,24 @@ def index():
     with connect_db() as db:
         query = """SELECT devices.id, devices.model FROM devices ORDER BY devices.model DESC"""
         devices = db.execute(query).fetchall()
-    return render_template("pages/_base.jinja",devices=devices)
+    return render_template("pages/dashboard.jinja",devices=devices)
+
+@app.route("/devices/<id>", methods=['GET','POST'])
+def device_page(id):
+    if request.method == "GET":
+        query = "SELECT devices.id, devices.model FROM devices WHERE devices.id = ?"
+        args = (id,)
+        with connect_db() as db:
+            db.execute(query,args).fetchone()
+    elif request.method == "POST":
+        return "Gey"
+
+@app.route("/devices/<id>/checklist/<check>", methods=['GET','POST'])
+def device_checklist(id,check):
+    if reque
+    return render_template("partials/check.jinja")
+
+
 
 #===========================================================
 # Configure the app

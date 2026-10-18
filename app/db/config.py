@@ -15,33 +15,13 @@
 #     SEED_DATA = "INSERT INTO name (...)" or None
 #----------------------------------------------------------------------------
 
-class userTable:
-
-    NAME = "users"
-
-    SCHEMA = """
-        CREATE TABLE users (
-            id   INTEGER PRIMARY KEY AUTOINCREMENT,
-            code TEXT    UNIQUE,
-            name TEXT
-        );
-    """
-
-    SEED_DATA = """
-        INSERT INTO users (id, code, name) 
-            VALUES (1, 'ALE2J', 'Zander'),
-            (2, 'KWJ15', 'Ellis'),
-            (3, 'U4H34', 'Jesse'),
-            (4, 'IWGR1', 'Zach')
-    """
-
 class deviceTable:
 
-    NAME = "devices"
+    NAME = "computers"
 
     SCHEMA = """
-        CREATE TABLE devices (
-            id    TEXT PRIMARY KEY,
+        CREATE TABLE computers (
+            id    TEXT,
             model TEXT
         );
     """
@@ -96,19 +76,16 @@ class workDoneTable:
 
     SCHEMA = """
         CREATE TABLE work_done (
-            id        INTEGER PRIMARY KEY AUTOINCREMENT,
-            computer  TEXT    REFERENCES computers (id),
-            user      INTEGER REFERENCES users (id),
-            notes     TEXT,
-            timestamp TEXT
-        );
+        id        INTEGER PRIMARY KEY,
+        computer  TEXT    REFERENCES computers (id),
+        user      TEXT,
+        notes     TEXT,
+        timestamp TEXT
+    );
     """
 
     SEED_DATA = """
-        INSERT INTO work_done (id, computer, user, notes, timestamp) 
-            VALUES (1, 'RAD14025', 2, NULL, '9:00'),
-             (2, 'RAD14053', 1, NULL, '5:21'),
-             (3, 'RAD14022', 2, NULL, '00:30')
+
     """
 
 class statusTable:
@@ -117,27 +94,24 @@ class statusTable:
 
     SCHEMA = """
         CREATE TABLE status (
-            id       INTEGER PRIMARY KEY AUTOINCREMENT,
-            computer TEXT    REFERENCES computers (id),
-            user     INTEGER REFERENCES users (id),
-            outcome  INTEGER NOT NULL,
-            notes    TEXT,
-            check_id INTEGER REFERENCES checks (id) 
-        );
+        id       INTEGER PRIMARY KEY,
+        computer TEXT    REFERENCES computers (id),
+        outcome  INTEGER,
+        notes    TEXT,
+        [check]  INTEGER REFERENCES checks (id) 
+    );
     """
 
     SEED_DATA = """
-        INSERT INTO status (id, computer, user, outcome, notes, check_id) 
-            VALUES (1, 'RAD14022', 2, 1, 'Works', 1),
-             (2, 'RAD14022', 2, 0, 'No battery', 5)
+
     """
 
 class checksTable:
     NAME = "checks"
 
     SCHEMA = """
-        CREATE TABLE checks (
-            id   INTEGER PRIMARY KEY AUTOINCREMENT,
+            CREATE TABLE checks (
+            id   INTEGER,
             name TEXT
         );
     """
