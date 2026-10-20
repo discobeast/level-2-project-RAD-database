@@ -20,14 +20,14 @@ class deviceTable:
     NAME = "computers"
 
     SCHEMA = """
-        CREATE TABLE computers (
-            id    TEXT,
-            model TEXT
-        );
+    CREATE TABLE computers (
+        id    TEXT PRIMARY KEY,
+        model TEXT
+    );
     """
 
     SEED_DATA = """
-        INSERT INTO devices (id, model) 
+        INSERT INTO computers (id, model) 
             VALUES ('RAD14022', 'HP Elitebook x360 1030 g4'),
             ('RAD14023', 'HP Elitebook x360 1030 g4'),
             ('RAD14024', 'HP Elitebook x360 1030 g4'),
@@ -75,8 +75,8 @@ class workDoneTable:
     NAME = "work_done"
 
     SCHEMA = """
-        CREATE TABLE work_done (
-        id        INTEGER PRIMARY KEY,
+    CREATE TABLE work_done (
+        id        INTEGER PRIMARY KEY AUTOINCREMENT,
         computer  TEXT    REFERENCES computers (id),
         user      TEXT,
         notes     TEXT,
@@ -93,8 +93,8 @@ class statusTable:
     NAME = "status"
 
     SCHEMA = """
-        CREATE TABLE status (
-        id       INTEGER PRIMARY KEY,
+    CREATE TABLE status (
+        id       INTEGER PRIMARY KEY AUTOINCREMENT,
         computer TEXT    REFERENCES computers (id),
         outcome  INTEGER,
         notes    TEXT,
@@ -103,17 +103,23 @@ class statusTable:
     """
 
     SEED_DATA = """
-
+    INSERT INTO status (id,computer,outcome,notes,`check`)
+    VALUES 
+    (1, 'RAD14022', 1, NULL, 1),
+    (2, 'RAD14022', 0, NULL, 2),
+    (3, 'RAD14022', 1, NULL, 3),
+    (4, 'RAD14022', 1, NULL, 4)
+    
     """
 
 class checksTable:
     NAME = "checks"
 
     SCHEMA = """
-            CREATE TABLE checks (
-            id   INTEGER,
-            name TEXT
-        );
+    CREATE TABLE checks (
+        id   INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT
+    );
     """
 
     SEED_DATA = """
@@ -146,7 +152,6 @@ class checksTable:
 #----------------------------------------------------------------------------
 
 TABLES = [
-    userTable,
     deviceTable,
     checksTable,
     statusTable,
