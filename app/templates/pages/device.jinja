@@ -9,15 +9,17 @@
     <form action="/devices/{{device.id}}" method="post">
         {% for check in device.checks %}
             <div class="checklist_item">
-                    <p>{{check.name}}</p>
-                    <input type="checkbox" name="{{check.id}}-check_passed" id="check_passed" {% if check.passed %} checked {% endif %}>
-                    <label for="check_passed"></label>
-                    <input type="text" name="{{check.id}}-notes" id="notes" value="{{check.notes}}">
-                    <label for="notes"></label>
+                    <label>
+                        <input type="checkbox" name="{{check.id}}-check_passed" id="check_passed" {% if check.status == 1 %} checked {% endif %}>
+                        {{check.name}}
+                    </label>
+
+                    <label>
+                        <input type="text" name="{{check.id}}-notes" id="notes" value="{% if check.note %}{{check.note}}{% endif %}" placeholder="Notes.."> 
+                    </label>
             </div>
         {% endfor %}
         <input type="submit" value="Submit">
         </form>
     </div>
 {% endblock  %}
-

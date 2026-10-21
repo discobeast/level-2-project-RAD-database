@@ -3,7 +3,7 @@
 # By YOUR NAME HERE
 #===========================================================
 
-from flask import Flask, request, session, render_template, flash, redirect, send_file, make_response
+from flask import Flask, request, session, render_template, flash, redirect, send_file, make_response, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 from os import getenv
@@ -38,7 +38,8 @@ def device_page(id):
                 SELECT 
                     checks.name as name,
                     checks.id as id,
-                    status.outcome as status
+                    status.outcome as status,
+                    status.notes as note
 
                 FROM checks
                 LEFT JOIN status ON checks.id = status.`check` AND status.computer = ?;
@@ -75,7 +76,7 @@ def device_page(id):
                         notes = excluded.notes"""
             print(query)
             db.execute(query,tuple(args))
-            return data
+            return redirect(url_for('device_page',id = id))
 
 # @app.route("/devices/<id>/checklist/<check>", methods=['GET','POST'])
 # def device_checklist(id,check):
