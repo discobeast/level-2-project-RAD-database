@@ -16,16 +16,15 @@
     <script src="/static/js/utils.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.js" integrity="sha384-Q+Dky3iHVJOr6wUjQ4ulh6uQ76an/t+ak1+PjMVaxRjbZamFLAG+u9InkfjbsEQf" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="/static/css/reset.css">
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
 <body>
 
     <header>
-        <div id="user">
-            <img src="" alt="" id="profile">
-            <p id="name"></p>
-        </div>
+        {% block header %}
+        {% endblock %}
     </header>
 
     <main>

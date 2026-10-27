@@ -10,60 +10,95 @@ html{
     height: 100%;
 }
 
-body{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0 0 1fr;
-    grid-template-areas: 
-    'header'
-    'stats'
-    'devices';
-    header{
-        grid-area: header;
-    }
+main{
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#checklist{
+    margin: 0 10px 0 10px;
+    border: 1px solid black;
+    padding:10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
-    #graphs{
-        grid-area: device_list;
+    .checklist_item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .check_notes{
+            width: 50%;
+        }
+        
     }
+    input[type=submit]{
+        width:10rem;
+    }
+}
 
-    #filter {
+#worklogs{
+    margin: 0 10px 0 10px;
+    border: 1px solid black;
+    padding:10px;
+    form {
         display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: flex-start;
     }
-    #devices{
-        grid-area: devices;
-        display: flex;
+    #name{
+        width: 10ch;
+    }
+    #notes{
+        height:7rem;
+    }
+    #logs{
+        margin-top: 10px;
+        display:flex;
         flex-direction: column;
-        gap: 10px ;
-        
-        .device {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            .icon{
-                border-radius: 20px;
-                height: 20px;
-                width: 20px;
-                margin-right: -5px;
-            }
-            &:not(:last-child){
-                border-bottom:1px solid gray ;
-            }
+        gap:1rem;
+        .log{
+            border: 1px solid black;
+            padding-left: 10px;
+            display:flex;
+            flex-direction: row;
+            gap:1rem;
         }
-
-        .status-0 {
-            background-color: grey;
-        }
-
-        .status-1 {
-            background-color: green;
-        }
-
-        .status-2 {
-            background-color: red;
-        }
-
-        
-        
     }
+}
 
+header{
+    margin: 0 10px 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    h2{
+        margin-left: auto;
+    }
+}
+
+#device_list{
+    margin: 10px 10px 10px 10px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    form {
+        display:flex;
+        flex-direction: row;
+    }
+    #devices {
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+        a {
+            display: flex;
+            flex-direction: row;
+            gap:10px;
+            border: 1px solid black;
+            padding: 2px;
+        }
+    }
 }

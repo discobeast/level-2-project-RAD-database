@@ -3,7 +3,11 @@
 
 {% block content %}
     <div id="device_list">
-        
+        <form action="/devices/new" method="post">
+            <input type="text" name="id" placeholder="ID">
+            <input type="text" name="model" placeholder="Model">
+            <input type="submit" value="Add new device">
+        </form>
         <div id="devices">
             {% for device in devices %}
                 <a class="device status-{{device.id}}" href="/devices/{{device.id}}">

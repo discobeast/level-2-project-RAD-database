@@ -2,12 +2,15 @@
 
 {% block title %}- {{ device.id }}{% endblock  %}
 
-{% block content %}
+{% block header %}
     <h1>{{device.id}}</h1>
     <h2>{{device.model}}</h2>
+{% endblock header %}
+
+
+{% block content %}
     <div id="checklist">
-        <p>Checklist</p>
-        <form action="/devices/{{device.id}}" method="post">
+        <form action="/devices/{{device.id}}/checklist" method="post" id="checklist_form">
             {% for check in device.checks %}
                 <div class="checklist_item">
                         <label>
@@ -15,16 +18,36 @@
                             {{check.name}}
                         </label>
 
-                        <label>
-                            <input type="text" name="{{check.id}}-notes" id="notes" value="{% if check.note %}{{check.note}}{% endif %}" placeholder="Notes.."> 
-                        </label>
+                            {# <input type="text" name="{{check.id}}-notes" class="check_notes" value="{% if check.note %}{{check.note}}{% endif %}" placeholder="Notes..">  #}
+                            <textarea name="{{check.id}}-notes" class="check_notes" placeholder="Notes..">{% if check.note %}{{check.note}}{% endif %}</textarea>
                 </div>
             {% endfor %}
             <input type="submit" value="Submit">
         </form>
     </div>
 
-    <div></div>
+    <div id="worklogs">
+        <form action="/devices/{{ device.id }}/worklog" method="post">
+            <input type="text" name="name" id="name">
+            <textarea name="notes" id="notes"></textarea>
+            <input type="submit" value="">
+        </form>
+        <div id="logs">
+            {% for log in device.worklogs %}
+                <div class="log">
+                    <p>{{ log.user }}</p>
+                    <p>{{ log.notes }}</p>
+                    <p>{{ log.timestamp }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div hx-target="this" hx-swap="outerHTML">
+        <button hx-get="/devices/{{ device.id }}/delete" class="btn primary">
+            Delete
+        </button>
+    </div>
 
     <a href="/">Back</a>
 {% endblock  %}
