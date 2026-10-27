@@ -78,6 +78,13 @@ def device_page(id):
             db.execute(query,tuple(args))
             return redirect(url_for('device_page',id = id))
 
+@app.route("/devices/new", methods=['GET','POST'])
+def new_device():
+    if request.method == 'GET':
+        return render_template("pages/new_device.jinja")
+    if request.method == 'POST':
+        #TODO
+        return redirect("/")
 # @app.route("/devices/<id>/checklist/<check>", methods=['GET','POST'])
 # def device_checklist(id,check):
 #     if requeq

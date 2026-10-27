@@ -3,23 +3,28 @@
 {% block title %}- {{ device.id }}{% endblock  %}
 
 {% block content %}
-    <h1>{{device.name}}</h1>
-    <h2>{{device.id}}</h2>
+    <h1>{{device.id}}</h1>
+    <h2>{{device.model}}</h2>
     <div id="checklist">
-    <form action="/devices/{{device.id}}" method="post">
-        {% for check in device.checks %}
-            <div class="checklist_item">
-                    <label>
-                        <input type="checkbox" name="{{check.id}}-check_passed" id="check_passed" {% if check.status == 1 %} checked {% endif %}>
-                        {{check.name}}
-                    </label>
+        <p>Checklist</p>
+        <form action="/devices/{{device.id}}" method="post">
+            {% for check in device.checks %}
+                <div class="checklist_item">
+                        <label>
+                            <input type="checkbox" name="{{check.id}}-check_passed" id="check_passed" {% if check.status == 1 %} checked {% endif %}>
+                            {{check.name}}
+                        </label>
 
-                    <label>
-                        <input type="text" name="{{check.id}}-notes" id="notes" value="{% if check.note %}{{check.note}}{% endif %}" placeholder="Notes.."> 
-                    </label>
-            </div>
-        {% endfor %}
-        <input type="submit" value="Submit">
+                        <label>
+                            <input type="text" name="{{check.id}}-notes" id="notes" value="{% if check.note %}{{check.note}}{% endif %}" placeholder="Notes.."> 
+                        </label>
+                </div>
+            {% endfor %}
+            <input type="submit" value="Submit">
         </form>
     </div>
+
+    <div></div>
+
+    <a href="/">Back</a>
 {% endblock  %}
