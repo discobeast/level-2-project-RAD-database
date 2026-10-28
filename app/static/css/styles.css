@@ -31,6 +31,8 @@ form {
         justify-content: space-between;
         .check_notes{
             width: 50%;
+            min-height:2rem;
+            field-sizing: content;
         }
         
     }
@@ -48,12 +50,16 @@ form {
         justify-content: flex-start;
         flex-direction: row;
         align-items: flex-start;
+        input[type=submit]{
+            height:30px;
+        }
     }
     #name{
         width: 10ch;
     }
     #notes{
-        height:7rem;
+        field-sizing: content;
+        min-width: 50%;
     }
     #logs{
         margin-top: 10px;
@@ -66,6 +72,16 @@ form {
             display:flex;
             flex-direction: row;
             gap:1rem;
+            p.log_notes {
+                /* flex-grow:1; */
+                overflow:hidden;
+            }
+            p.log_timestamp{
+                flex-shrink:0;
+                margin-left: auto;
+                color:grey;
+                margin-right:10px;
+            }
         }
     }
 }

@@ -61,7 +61,7 @@ def device_update_checklist(id):
         values = ""
         for check in checks:
             check = check['id']
-            note = request.form.get(f"{check}-notes","")
+            note = request.form.get(f"{check}-notes","").strip()
             state = 1 if request.form.get(f"{check}-check_passed",0) == 'on' else 0
             args.append(id)
             args.append(state)
@@ -92,7 +92,7 @@ def device_update_worklog(id):
         print(formatted_time)
         args = (id,name,notes,formatted_time)
         db.execute(query,args)
-    return redirect("/")
+    return redirect(url_for('device_page',id = id))
 
 @app.post("/devices/new")
 def new_device():
