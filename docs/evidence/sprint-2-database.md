@@ -17,17 +17,19 @@ Implement the database, populated with test data. Create queries that retrieve t
     - Final checklist for device
 - Develop SQL database queries to:
     - return a numerical status once a predetermined set of conditions has been met within a device's data
-    - manage the login of users and store user actions
     - filter a list of devices, given queries
+    - Store and manage the worklogs of devices
 
 
-## Testing FEATURE NAME HERE
+## Testing 
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+<!-- Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing -->
+Testing the creation of a device
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
 ![Placeholder](screenshots/placeholder.png)
+
 
 ### Changes / Improvements
 

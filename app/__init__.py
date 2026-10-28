@@ -112,7 +112,9 @@ def delete_device(id):
         args = (id,)
         with connect_db() as db:
             db.execute(query,args)
-        return redirect("/")
+        resp = make_response()
+        resp.headers['HX-Redirect'] = "/"
+        return resp
     else:
         return render_template('partials/delete.jinja',id=id )
 

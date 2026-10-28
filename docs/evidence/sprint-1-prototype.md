@@ -77,8 +77,8 @@ I gave my inital flow to one of my stakeholders (Mr taylor)
 Mr taylor wondered why a settings menu was needed.
 There are not enough settings to require a menu so the menu has been removed
 
-*IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
-
+<!-- *IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT* -->
+https://design.penpot.app/#/view?file-id=81f57451-85cc-819d-8008-7e75183d65db&page-id=4ff7ff5f-2875-80f9-8008-5a6523c53271&section=interactions&frame-id=bd097025-0315-8035-8008-6c68ef767fe0&index=0&share-id=67de744c-baf3-44b9-9737-bce6caaf3398
 
 ## Initial UI Prototype
 
@@ -100,7 +100,7 @@ of submitting text on mobile.
 Because of this I will be changing the per-device menu to a simpler y/n list of questions format for the initialization of the device,
 and then using a more streamlined ui for simpler changes (Like marking the device as scrap or given out)
 
-*FIGMA IMPROVED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+https://design.penpot.app/#/view?file-id=c828d3cf-7d4e-8145-8008-90767240c087&page-id=c828d3cf-7d4e-8145-8008-90767240c088&section=interactions&frame-id=fbac5124-b587-80ab-8008-9076850fd4cd&index=0&share-id=94659913-2b81-4fe5-bcf0-08a69412b3e0
 
 
 ## Refined UI Prototype
@@ -109,20 +109,20 @@ Having established the layout of the UI screens, the prototype was refined visua
 
 This Figma demo shows the UI with refinements applied:
 
-*FIGMA REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+<!-- *FIGMA REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT* -->
 
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
+<!-- Replace this text with notes about what you did to test the UI flow and the outcome of the testing. -->
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+<!-- Replace this text with notes any improvements you made as a result of the testing.
 
-*FIGMA IMPROVED REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+*FIGMA IMPROVED REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT* -->
 
 
 ## Sprint Review
-
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+<!-- 
+Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc. -->
 

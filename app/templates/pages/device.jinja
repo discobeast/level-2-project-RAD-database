@@ -42,10 +42,10 @@
             {% endfor %}
         </div>
     </div>
-    <div hx-confirm="Are you sure?" hx-target="this" hx-swap="outerHTML">
+    <div hx-confirm="Are you sure?" id="delete_device">
         <button hx-get="/devices/{{ device.id }}/delete?confirmed=true" class="btn danger">
             Delete
         </button>
+        
     </div>
-    <a href="/">Back</a>
 {% endblock  %}

@@ -8,6 +8,11 @@
 
 html{
     height: 100%;
+    width:100%;
+}
+
+body{
+    width:100%;
 }
 
 main{
@@ -24,7 +29,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
+    margin-right:10px;
     .checklist_item {
         width: 100%;
         display: flex;
@@ -117,4 +122,7 @@ header{
             padding: 2px;
         }
     }
+}
+#delete_device {
+    margin-left: 10px;
 }
