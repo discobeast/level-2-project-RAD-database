@@ -106,7 +106,9 @@ def new_device():
             vars = (id,model)
             db.execute(query,vars)
             return redirect(url_for('device_page',id = id))
-        else 
+        else:
+            resp = make_response()
+            resp.headers["HX-trigger"]
 
 @app.get("/devices/<id>/delete")
 def delete_device(id):
