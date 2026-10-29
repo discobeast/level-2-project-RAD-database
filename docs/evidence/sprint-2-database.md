@@ -25,15 +25,23 @@ Implement the database, populated with test data. Create queries that retrieve t
 
 <!-- Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing -->
 Testing the creation of a device
+Testing the creation of a duplicate device
+Testing the creation of a device with no ID or model
+
+Creation of a device normally goes smoothly,
+Creation of a duplicate device throws up an SQL unique error and 500 server error is shown
+Creation of a device with no ID creates a link to an empty device/ page which does not exist and the entry is not possible to delete due to the absence of its page.
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
-![Placeholder](screenshots/placeholder.png)
+![Testing creations](<screenshots/Test device creation.gif>)
 
+![Testing duplicates](<screenshots/Test duplicate device.gif>)
 
+![Testing empty values](<screenshots/Test empty name device.gif>)
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+No improvements
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 

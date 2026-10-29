@@ -96,14 +96,17 @@ def device_update_worklog(id):
 
 @app.post("/devices/new")
 def new_device():
-    print("test")
-    id = request.form['id']
-    model = request.form['model']
-    query = "INSERT INTO computers (id,model) VALUES (?,?);"
-    vars = (id,model)
     with connect_db() as db:
-        db.execute(query,vars)
-    return redirect(url_for('device_page',id = id))
+        id = request.form['id']
+        model = request.form['model']
+        query = "SELECT computers.id FROM computers WHERE computers.id = ?;"
+        args = (id,)
+        if not db.execute(query,args):
+            query = "INSERT INTO computers (id,model) VALUES (?,?);"
+            vars = (id,model)
+            db.execute(query,vars)
+            return redirect(url_for('device_page',id = id))
+        else 
 
 @app.get("/devices/<id>/delete")
 def delete_device(id):
