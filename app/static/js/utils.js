@@ -43,4 +43,3 @@ window.onload = (event) => {
         })
     }
 }
-

@@ -108,7 +108,8 @@ def new_device():
             return redirect(url_for('device_page',id = id))
         else:
             resp = make_response()
-            resp.headers["HX-trigger"]
+            resp.headers["HX-Trigger"] = "deviceExists"
+            return resp
 
 @app.get("/devices/<id>/delete")
 def delete_device(id):
