@@ -41,7 +41,9 @@ Creation of a device with no ID creates a link to an empty device/ page which do
 ![Testing empty values](<screenshots/Test empty name device.gif>)
 ### Changes / Improvements
 
-No improvements
+Improved device creation to prevent the creation of devices with duplicate ID's
+by adding checks to the logic.
+
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 

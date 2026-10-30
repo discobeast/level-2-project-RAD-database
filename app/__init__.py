@@ -21,6 +21,12 @@ app = Flask(__name__)
 # App Routes Handlers
 #===========================================================
 
+def hx_redirect(url):
+    resp = make_response()
+    resp.headers['HX-Redirect'] = url
+    return resp
+
+
 @app.route("/", methods=['GET','POST']) 
 def index():
     with connect_db() as db:
@@ -80,7 +86,7 @@ def device_update_checklist(id):
                     notes = excluded.notes"""
         print(query)
         db.execute(query,tuple(args))
-        return redirect(url_for('device_page',id = id))
+        return hx_redirect(url_for('device_page',id = id))
 
 @app.post("/devices/<id>/worklog")
 def device_update_worklog(id):
@@ -97,19 +103,21 @@ def device_update_worklog(id):
 @app.post("/devices/new")
 def new_device():
     with connect_db() as db:
-        id = request.form['id']
-        model = request.form['model']
+        id = request.form['id'].strip()
+        model = request.form['model'].strip()
+        if not id or not model:
+            return render_template('partials/form.jinja',message="ID and Model are required fields.",status="error",id=id,model=model)
         query = "SELECT computers.id FROM computers WHERE computers.id = ?;"
         args = (id,)
-        if not db.execute(query,args):
+        if not db.execute(query,args).fetchall():
             query = "INSERT INTO computers (id,model) VALUES (?,?);"
             vars = (id,model)
             db.execute(query,vars)
-            return redirect(url_for('device_page',id = id))
+            return hx_redirect(url_for('device_page',id = id))
         else:
-            resp = make_response()
-            resp.headers["HX-Trigger"] = "deviceExists"
-            return resp
+            return render_template('partials/form.jinja',message="Device with this ID already exists.",status="error",id=id,model=model)
+
+
 
 @app.get("/devices/<id>/delete")
 def delete_device(id):

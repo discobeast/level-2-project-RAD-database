@@ -10,16 +10,16 @@
 
 {% block content %}
     <div id="checklist">
-        <form action="/devices/{{device.id}}/checklist" method="post" id="checklist_form">
+        <form hx-post="/devices/{{device.id}}/checklist" id="checklist_form" hx-swap="none">
             {% for check in device.checks %}
                 <div class="checklist_item">
                         <label>
-                            <input type="checkbox" name="{{check.id}}-check_passed" id="check_passed" {% if check.status == 1 %} checked {% endif %}>
+                            <input type="checkbox" name="{{check.id}}-check_passed" id="check_passed" {% if check.status == 1 %} checked {% endif %} hx-post="/devices/{{device.id}}/checklist">
                             {{check.name}}
                         </label>
 
                             {# <input type="text" name="{{check.id}}-notes" class="check_notes" value="{% if check.note %}{{check.note}}{% endif %}" placeholder="Notes..">  #}
-                            <textarea name="{{check.id}}-notes" class="check_notes" placeholder="Notes..">{% if check.note %}{{check.note}}{% endif %}</textarea>
+                            <textarea name="{{check.id}}-notes" class="check_notes" placeholder="Notes..">{% if check.note %}{{check.note}}{% endif %}</textarea hx-post="/devices/{{device.id}}/checklist">
                 </div>
             {% endfor %}
             <input type="submit" value="Submit">
