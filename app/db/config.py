@@ -75,13 +75,13 @@ class workDoneTable:
     NAME = "work_done"
 
     SCHEMA = """
-    CREATE TABLE work_done (
-        id        INTEGER PRIMARY KEY AUTOINCREMENT,
-        computer  TEXT    REFERENCES computers (id),
-        user      TEXT,
-        notes     TEXT,
-        timestamp TEXT
-    );
+        CREATE TABLE work_done (
+            id        INTEGER PRIMARY KEY AUTOINCREMENT,
+            computer  TEXT    REFERENCES computers (id) ON DELETE CASCADE,
+            user      TEXT,
+            notes     TEXT,
+            timestamp TEXT
+        );
     """
 
     SEED_DATA = """
@@ -95,10 +95,10 @@ class statusTable:
     SCHEMA = """
     CREATE TABLE status (
         id       INTEGER PRIMARY KEY AUTOINCREMENT,
-        computer TEXT    REFERENCES computers (id),
+        computer TEXT    REFERENCES computers (id) ON DELETE CASCADE,
         outcome  INTEGER,
         notes    TEXT,
-        [check]  INTEGER REFERENCES checks (id) 
+        [check]  INTEGER REFERENCES checks (id) ON DELETE CASCADE
     );
     """
 
@@ -132,6 +132,10 @@ class checksTable:
          (6, 'Boots with charger')
     """
 
+class indexer:
+    NAME = 'indexer'
+    SCHEMA = "CREATE UNIQUE INDEX idx_status_computer_check ON status (computer,'check');"
+    SEED_DATA = ""
 # Add more table classes here...
 
 
@@ -155,6 +159,7 @@ TABLES = [
     deviceTable,
     checksTable,
     statusTable,
-    workDoneTable
+    workDoneTable,
+    indexer
 ]
 

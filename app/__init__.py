@@ -86,7 +86,7 @@ def device_update_checklist(id):
                     notes = excluded.notes"""
         print(query)
         db.execute(query,tuple(args))
-        return hx_redirect(url_for('device_page',id = id))
+        return make_response("",200)
 
 @app.post("/devices/<id>/worklog")
 def device_update_worklog(id):
