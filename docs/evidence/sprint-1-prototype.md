@@ -100,8 +100,6 @@ of submitting text on mobile.
 Because of this I will be changing the per-device menu to a simpler y/n list of questions format for the initialization of the device,
 and then using a more streamlined ui for simpler changes (Like marking the device as scrap or given out)
 
-https://design.penpot.app/#/view?file-id=c828d3cf-7d4e-8145-8008-90767240c087&page-id=c828d3cf-7d4e-8145-8008-90767240c088&section=interactions&frame-id=fbac5124-b587-80ab-8008-9076850fd4cd&index=0&share-id=94659913-2b81-4fe5-bcf0-08a69412b3e0
-
 
 ## Refined UI Prototype
 
@@ -110,12 +108,18 @@ Having established the layout of the UI screens, the prototype was refined visua
 This Figma demo shows the UI with refinements applied:
 
 <!-- *FIGMA REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT* -->
+https://design.penpot.app/#/view?file-id=c828d3cf-7d4e-8145-8008-90767240c087&page-id=c828d3cf-7d4e-8145-8008-90767240c088&section=interactions&frame-id=fbac5124-b587-80ab-8008-9076850fd4cd&index=0&share-id=94659913-2b81-4fe5-bcf0-08a69412b3e0
 
 ### Testing
 
-<!-- Replace this text with notes about what you did to test the UI flow and the outcome of the testing. -->
+I gave Mr taylor a version of my website and asked him about any changes he would like to see.
+
+Mr taylor asked for more of a visual cue when ticking a checklist element
+
+He also asked for a visual indication of when a device was last worked on and the state of a device E.G. scrap, not started, almost complete, complete, Ect
 
 ### Changes / Improvements
+
 
 <!-- Replace this text with notes any improvements you made as a result of the testing.
 

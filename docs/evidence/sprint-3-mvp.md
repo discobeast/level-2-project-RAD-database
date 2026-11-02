@@ -10,11 +10,14 @@ Continue to develop the web application to the point that it provides all key fu
 **Edit these goals as needed**
 
 - Create the following web pages:
-    - Form for ...
-    - Etc.
+    - Device dashboard
+    - Per device menu
 - Develop SQL database queries to:
-    - Add a new ...
-    - Etc.
+    - Make new device
+    - Delete device
+    - check if a new device is valid
+    - Update checklist
+    - Add worklog
 
 
 ## Testing FEATURE NAME HERE

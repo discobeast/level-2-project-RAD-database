@@ -79,5 +79,4 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
-
+I added errorchecking that will be benificial for finishing my project and somehow did most of the testing for sprint 3 unknowingly in this sprint.

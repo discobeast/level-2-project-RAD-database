@@ -9,9 +9,10 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 
 **Edit these goals as needed**
 
-- Refine the design and UI of the website
-- Refine the user experience (UX) of the system
-- Perform final, full-system testing
+ - Finish sprint 0 - 3
+ - Finish Website color scheme
+ - Finalize website structure
+ - Add worklog deletion 
 
 
 ## Testing FEATURE NAME HERE
