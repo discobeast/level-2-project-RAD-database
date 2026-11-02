@@ -238,7 +238,7 @@ def _init_db_table(table_name, schema, seed_sql):
 def _table_exists(db, table_name):
     """Check if a table exists in the database"""
     result = db.execute(
-        "SELECT name FROM sqlite_master WHERE type='table' OR type='index' AND name=?",
+        "SELECT name FROM sqlite_master WHERE type IN ('table','index') AND name=?",
         (table_name,),
         logged=False
     ).fetchone()

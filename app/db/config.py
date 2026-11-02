@@ -80,7 +80,7 @@ class workDoneTable:
             computer  TEXT    REFERENCES computers (id) ON DELETE CASCADE,
             user      TEXT,
             notes     TEXT,
-            timestamp TEXT
+            timestamp INTEGER
         );
     """
 
@@ -134,7 +134,7 @@ class checksTable:
 
 class indexer:
     NAME = 'indexer'
-    SCHEMA = "CREATE UNIQUE INDEX idx_status_computer_check ON status (computer,'check');"
+    SCHEMA = "CREATE UNIQUE INDEX indexer ON status (computer,'check');"
     SEED_DATA = ""
 # Add more table classes here...
 
@@ -156,8 +156,8 @@ class indexer:
 #----------------------------------------------------------------------------
 
 TABLES = [
-    deviceTable,
     checksTable,
+    deviceTable,
     statusTable,
     workDoneTable,
     indexer

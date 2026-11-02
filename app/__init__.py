@@ -16,7 +16,8 @@ import time
 # Create the app
 app = Flask(__name__)
 
-
+def formatTime(timestamp):
+    return time.strftime("%d %B %Y %H:%M:%S", time.localtime(timestamp))
 #===========================================================
 # App Routes Handlers
 #===========================================================
@@ -30,8 +31,12 @@ def hx_redirect(url):
 @app.route("/", methods=['GET','POST']) 
 def index():
     with connect_db() as db:
-        query = """SELECT computers.id, computers.model FROM computers ORDER BY computers.model DESC"""
+        query = """SELECT computers.id, computers.model, MAX(work_done.timestamp) AS timestamp FROM computers LEFT JOIN work_done ON computers.id = work_done.computer GROUP BY computers.id, computers.model ORDER BY timestamp DESC"""
         devices = db.execute(query).fetchall()
+        formatted_devices = []
+        for device in devices:
+            if device['timestamp']:
+                device['timestamp'] = formatTime(device['timestamp'])
     return render_template("pages/dashboard.jinja",devices=devices)
 
 @app.route("/devices/<id>", methods=['GET','POST'])
@@ -55,8 +60,12 @@ def device_page(id):
 
         query = "SELECT user,notes,timestamp FROM work_done WHERE computer = ?;"
         worklog = db.execute(query,args).fetchall()
+        for log in worklog:
+            log['timestamp'] = formatTime(log['timestamp'])
+            
         device['worklogs'] = worklog
         return render_template("pages/device.jinja", device=device)
+
 
 @app.post("/devices/<id>/checklist")
 def device_update_checklist(id):
@@ -94,9 +103,9 @@ def device_update_worklog(id):
         name = request.form['name']
         notes = request.form['notes']
         query = """INSERT INTO work_done (computer,user,notes,timestamp) VALUES (?,?,?,?);"""
-        formatted_time = time.strftime("%d %B %Y %H:%M:%S", time.localtime(time.time()))
-        print(formatted_time)
-        args = (id,name,notes,formatted_time)
+        # formatted_time = time.strftime("%d %B %Y %H:%M:%S", time.localtime(time.time()))
+        log_time = time.time()
+        args = (id,name,notes,log_time)
         db.execute(query,args)
     return redirect(url_for('device_page',id = id))
 
