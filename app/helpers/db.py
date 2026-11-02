@@ -41,6 +41,7 @@ def _prefix(action="", colour="blue"):
 def connect_db():
     """Create a database connection with Rich logging"""
     connection = sqlite3.connect(LOCAL_DB_PATH)
+    connection.execute("PRAGMA foreign_keys = ON;")
     connection.row_factory = _dict_factory
 
     wrapped_connection = _LoggingConnection(connection)
@@ -53,6 +54,7 @@ def connect_db():
         raise
     finally:
         wrapped_connection.close()
+
 
 
 def _dict_factory(cursor, row):
@@ -209,6 +211,7 @@ def init_database():
         _init_db_table(table.NAME, table.SCHEMA, table.SEED_DATA)
 
     db_show()
+    
 
 
 def _create_db_if_needed():

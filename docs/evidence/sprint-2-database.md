@@ -46,11 +46,13 @@ by adding checks to the logic.
 
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+![Alt text](<screenshots/Test duplicate device 2.gif>)
+![Alt text](<screenshots/Test empty device id 2.gif>)
 
 
-## Testing FEATURE NAME HERE
+## Device deletion
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+Testing deleting devices by deleting an entry from the database
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
