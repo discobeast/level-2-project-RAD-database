@@ -3,7 +3,11 @@
 {% block title %}- {{ device.id }}{% endblock  %}
 
 {% block header %}
-    <a href="/"><h1>{{device.id}}</h1></a>
+    <div class="mininav">
+        <a href="/">
+        <img src="\static\images\chevron-left.svg" alt=""></h1></a>
+        <h1>{{device.id}}
+    </div>
     <h2>{{device.model}}</h2>
 {% endblock header %}
 

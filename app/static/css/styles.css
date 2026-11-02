@@ -1,90 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css?family=Noto%20Kufi%20Arabic:700|Noto%20Kufi%20Arabic:400');
 :root {
-    --text: #e9edf4;
-    --bg: #06090e;
-    --primary: #92abd8;
-    --secondary: #254680;
-    --accent: #5785d9;
+    --text: #dfe0fd;
+    --bg: #26262b;
+    --primary: #7c77f9;
+    --secondary: #bb97d8;
+    --accent: #f63b8c;
     --textcontrast: #64d97b;
     --bgcontrast: #64d97b;
-    --primarycontrast: #64d97b;
-    --secondarycontrast: #64d97b;
-    --accentcontrast: #ffdd00;
-    --text5: hsl(218, 33%, 94%, 5%);
-    --text10: hsl(218, 33%, 94%, 10%);
-    --text15: hsl(218, 33%, 94%, 15%);
-    --text20: hsl(218, 33%, 94%, 20%);
-    --text25: hsl(218, 33%, 94%, 25%);
-    --text30: hsl(218, 33%, 94%, 30%);
-    --text35: hsl(218, 33%, 94%, 35%);
-    --text40: hsl(218, 33%, 94%, 40%);
-    --text45: hsl(218, 33%, 94%, 45%);
-    --text50: hsl(218, 33%, 94%, 50%);
-    --text55: hsl(218, 33%, 94%, 55%);
-    --text60: hsl(218, 33%, 94%, 60%);
-    --text65: hsl(218, 33%, 94%, 65%);
-    --text70: hsl(218, 33%, 94%, 70%);
-    --text75: hsl(218, 33%, 94%, 75%);
-    --text80: hsl(218, 33%, 94%, 80%);
-    --text85: hsl(218, 33%, 94%, 85%);
-    --text90: hsl(218, 33%, 94%, 90%);
-    --text95: hsl(218, 33%, 94%, 95%);
-    --primary5: hsl(219, 47%, 71%, 5%);
-    --primary10: hsl(219, 47%, 71%, 10%);
-    --primary15: hsl(219, 47%, 71%, 15%);
-    --primary20: hsl(219, 47%, 71%, 20%);
-    --primary25: hsl(219, 47%, 71%, 25%);
-    --primary30: hsl(219, 47%, 71%, 30%);
-    --primary35: hsl(219, 47%, 71%, 35%);
-    --primary40: hsl(219, 47%, 71%, 40%);
-    --primary45: hsl(219, 47%, 71%, 45%);
-    --primary50: hsl(219, 47%, 71%, 50%);
-    --primary55: hsl(219, 47%, 71%, 55%);
-    --primary60: hsl(219, 47%, 71%, 60%);
-    --primary65: hsl(219, 47%, 71%, 65%);
-    --primary70: hsl(219, 47%, 71%, 70%);
-    --primary75: hsl(219, 47%, 71%, 75%);
-    --primary80: hsl(219, 47%, 71%, 80%);
-    --primary85: hsl(219, 47%, 71%, 85%);
-    --primary90: hsl(219, 47%, 71%, 90%);
-    --primary95: hsl(219, 47%, 71%, 95%);
-    --secondary5: hsl(218, 55%, 32%, 5%);
-    --secondary10: hsl(218, 55%, 32%, 10%);
-    --secondary15: hsl(218, 55%, 32%, 15%);
-    --secondary20: hsl(218, 55%, 32%, 20%);
-    --secondary25: hsl(218, 55%, 32%, 25%);
-    --secondary30: hsl(218, 55%, 32%, 30%);
-    --secondary35: hsl(218, 55%, 32%, 35%);
-    --secondary40: hsl(218, 55%, 32%, 40%);
-    --secondary45: hsl(218, 55%, 32%, 45%);
-    --secondary50: hsl(218, 55%, 32%, 50%);
-    --secondary55: hsl(218, 55%, 32%, 55%);
-    --secondary60: hsl(218, 55%, 32%, 60%);
-    --secondary65: hsl(218, 55%, 32%, 65%);
-    --secondary70: hsl(218, 55%, 32%, 70%);
-    --secondary75: hsl(218, 55%, 32%, 75%);
-    --secondary80: hsl(218, 55%, 32%, 80%);
-    --secondary85: hsl(218, 55%, 32%, 85%);
-    --secondary90: hsl(218, 55%, 32%, 90%);
-    --secondary95: hsl(218, 55%, 32%, 95%);
-    --accent5: hsl(219, 63%, 60%, 5%);
-    --accent10: hsl(219, 63%, 60%, 10%);
-    --accent15: hsl(219, 63%, 60%, 15%);
-    --accent20: hsl(219, 63%, 60%, 20%);
-    --accent25: hsl(219, 63%, 60%, 25%);
-    --accent30: hsl(219, 63%, 60%, 30%);
-    --accent35: hsl(219, 63%, 60%, 35%);
-    --accent40: hsl(219, 63%, 60%, 40%);
-    --accent45: hsl(219, 63%, 60%, 45%);
-    --accent50: hsl(219, 63%, 60%, 50%);
-    --accent55: hsl(219, 63%, 60%, 55%);
-    --accent60: hsl(219, 63%, 60%, 60%);
-    --accent65: hsl(219, 63%, 60%, 65%);
-    --accent70: hsl(219, 63%, 60%, 70%);
-    --accent75: hsl(219, 63%, 60%, 75%);
-    --accent80: hsl(219, 63%, 60%, 80%);
-    --accent85: hsl(219, 63%, 60%, 85%);
-    --accent90: hsl(219, 63%, 60%, 90%);
-    --accent95: hsl(219, 63%, 60%, 95%);
+    --primarycontrast: #ffdd00;
+    --secondarycontrast: #ffdd00;
+    --accentcontrast: #ff8f8f;
+    --text5: hsl(238, 88%, 93%, 5%);
+    --text10: hsl(238, 88%, 93%, 10%);
+    --text15: hsl(238, 88%, 93%, 15%);
+    --text20: hsl(238, 88%, 93%, 20%);
+    --text25: hsl(238, 88%, 93%, 25%);
+    --text30: hsl(238, 88%, 93%, 30%);
+    --text35: hsl(238, 88%, 93%, 35%);
+    --text40: hsl(238, 88%, 93%, 40%);
+    --text45: hsl(238, 88%, 93%, 45%);
+    --text50: hsl(238, 88%, 93%, 50%);
+    --text55: hsl(238, 88%, 93%, 55%);
+    --text60: hsl(238, 88%, 93%, 60%);
+    --text65: hsl(238, 88%, 93%, 65%);
+    --text70: hsl(238, 88%, 93%, 70%);
+    --text75: hsl(238, 88%, 93%, 75%);
+    --text80: hsl(238, 88%, 93%, 80%);
+    --text85: hsl(238, 88%, 93%, 85%);
+    --text90: hsl(238, 88%, 93%, 90%);
+    --text95: hsl(238, 88%, 93%, 95%);
+    --primary5: hsl(242, 92%, 72%, 5%);
+    --primary10: hsl(242, 92%, 72%, 10%);
+    --primary15: hsl(242, 92%, 72%, 15%);
+    --primary20: hsl(242, 92%, 72%, 20%);
+    --primary25: hsl(242, 92%, 72%, 25%);
+    --primary30: hsl(242, 92%, 72%, 30%);
+    --primary35: hsl(242, 92%, 72%, 35%);
+    --primary40: hsl(242, 92%, 72%, 40%);
+    --primary45: hsl(242, 92%, 72%, 45%);
+    --primary50: hsl(242, 92%, 72%, 50%);
+    --primary55: hsl(242, 92%, 72%, 55%);
+    --primary60: hsl(242, 92%, 72%, 60%);
+    --primary65: hsl(242, 92%, 72%, 65%);
+    --primary70: hsl(242, 92%, 72%, 70%);
+    --primary75: hsl(242, 92%, 72%, 75%);
+    --primary80: hsl(242, 92%, 72%, 80%);
+    --primary85: hsl(242, 92%, 72%, 85%);
+    --primary90: hsl(242, 92%, 72%, 90%);
+    --primary95: hsl(242, 92%, 72%, 95%);
+    --secondary5: hsl(273, 45%, 72%, 5%);
+    --secondary10: hsl(273, 45%, 72%, 10%);
+    --secondary15: hsl(273, 45%, 72%, 15%);
+    --secondary20: hsl(273, 45%, 72%, 20%);
+    --secondary25: hsl(273, 45%, 72%, 25%);
+    --secondary30: hsl(273, 45%, 72%, 30%);
+    --secondary35: hsl(273, 45%, 72%, 35%);
+    --secondary40: hsl(273, 45%, 72%, 40%);
+    --secondary45: hsl(273, 45%, 72%, 45%);
+    --secondary50: hsl(273, 45%, 72%, 50%);
+    --secondary55: hsl(273, 45%, 72%, 55%);
+    --secondary60: hsl(273, 45%, 72%, 60%);
+    --secondary65: hsl(273, 45%, 72%, 65%);
+    --secondary70: hsl(273, 45%, 72%, 70%);
+    --secondary75: hsl(273, 45%, 72%, 75%);
+    --secondary80: hsl(273, 45%, 72%, 80%);
+    --secondary85: hsl(273, 45%, 72%, 85%);
+    --secondary90: hsl(273, 45%, 72%, 90%);
+    --secondary95: hsl(273, 45%, 72%, 95%);
+    --accent5: hsl(334, 91%, 60%, 5%);
+    --accent10: hsl(334, 91%, 60%, 10%);
+    --accent15: hsl(334, 91%, 60%, 15%);
+    --accent20: hsl(334, 91%, 60%, 20%);
+    --accent25: hsl(334, 91%, 60%, 25%);
+    --accent30: hsl(334, 91%, 60%, 30%);
+    --accent35: hsl(334, 91%, 60%, 35%);
+    --accent40: hsl(334, 91%, 60%, 40%);
+    --accent45: hsl(334, 91%, 60%, 45%);
+    --accent50: hsl(334, 91%, 60%, 50%);
+    --accent55: hsl(334, 91%, 60%, 55%);
+    --accent60: hsl(334, 91%, 60%, 60%);
+    --accent65: hsl(334, 91%, 60%, 65%);
+    --accent70: hsl(334, 91%, 60%, 70%);
+    --accent75: hsl(334, 91%, 60%, 75%);
+    --accent80: hsl(334, 91%, 60%, 80%);
+    --accent85: hsl(334, 91%, 60%, 85%);
+    --accent90: hsl(334, 91%, 60%, 90%);
+    --accent95: hsl(334, 91%, 60%, 95%);
 }
 
 html{
@@ -103,7 +105,6 @@ main{
 }
 #checklist{
     margin: 0 10px 0 10px;
-    border: 1px solid black;
     padding:10px;
 }
 
@@ -128,7 +129,6 @@ form {
 
 #worklogs{
     margin: 0 10px 0 10px;
-    border: 1px solid black;
     padding:10px;
     form {
         display: flex;
@@ -155,7 +155,6 @@ form {
         flex-direction: column;
         gap:1rem;
         .log{
-            border: 1px solid var(--accent);
             background-color: var(--accent5);
             padding-left: 10px;
             display:flex;
@@ -176,13 +175,27 @@ form {
 }
 
 header{
-    margin: 0 10px 0 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
     h2{
         margin-left: auto;
         text-align:right;
+    }
+    margin-left:10px;
+    margin-bottom: 10px;
+    .mininav{
+        display:flex;
+        flex-direction: row;
+        background-color: var(--secondary25);
+        border-radius: 5px;
+        align-items: center;
+        gap:0;
+        justify-content: space-evenly;
+        padding: 0 4px;
+        a>img {
+            fill: #f63b8c;
+        }
     }
 }
 
@@ -216,7 +229,6 @@ header{
             display: flex;
             flex-direction: row;
             gap:10px;
-            border: 1px solid black;
             padding: 2px;
         }
     }
@@ -232,23 +244,39 @@ body{
     a {text-decoration: none;}
     background-color: var(--bg);
     h1, h2{
-        color: var(--text);
+        color: var(--text30);
+        -webkit-text-stroke: 1px var(--text10);
+        font-family: 'Noto Kufi Arabic';
         
     }
     p,label,button {
-        color: var(--text);
+        color: var(--text90);
     }
 
     #checklist, #worklogs, #device_list{
-        background-color: var(--secondary40);
+        background-color: var(--primary10);
         border-radius: 10px;
+        border: 1px solid var(--primary5);
     }
 
     #checklist{
         .checklist_item {
-            background-color: var(--secondary50);
+            background-color: var(--secondary20);
             padding:5px;
             border-radius: 5px;
+            border: 1px solid var(--secondary15)
         }
+    }
+    input {
+        background-color: var(--secondary10);
+    }
+    button,input[type=submit]{
+        background-color: var(--secondary95);
+        color:var(--bg)
+    }
+    textarea{
+        background-color: var(--primary10);
+        border-radius: 5px;
+        border: 1px solid var(--accent10);
     }
 }
