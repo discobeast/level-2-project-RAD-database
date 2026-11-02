@@ -145,10 +145,6 @@ form {
         }
 
     }
-    #name{
-        width: 10ch;
-        flex-grow:1;
-    }
     #notes{
         field-sizing: content;
         flex-grow:3;
@@ -207,6 +203,7 @@ header{
     display:flex;
     flex-direction: column;
     gap:10px;
+    margin: 0 10px 0 10px;
     form {
         display:flex;
         flex-direction: row;
@@ -230,8 +227,7 @@ header{
     }
     #devices {
         display:flex;
-        flex-direction: column;
-        gap:10px;
+        flex-direction: column; 
         a {
             display: flex;
             flex-direction: row;
@@ -260,7 +256,7 @@ body{
         color: var(--text90);
     }
 
-    #checklist, #worklogs, #device_list{
+    #checklist, #worklogs{
         background-color: var(--primary10);
         border-radius: 10px;
         border: 1px solid var(--primary5);
@@ -288,20 +284,82 @@ body{
         border: 1px solid var(--accent10);
         color:var(--text);
     }
-
-    .log{
-        background-color: var(--secondary20);
-        padding: 5px;
-        border-radius: 8px;
-        P:first-of-type {
-            background-color: var(--primary);
-            border-radius: 5px;
-            padding: 2px 4px;
-            margin-right: 3px;
+    ::placeholder{
+        color: var(--text50);
+    }
+    #worklogs{
+        form {
+            #name{
+                flex-basis:160px;
+                flex-grow:0;
+                flex-shrink:1;
+            }
+            #notes{
+                flex-basis:200px;
+                flex-grow:3;
+            }
+            input[type=submit]{
+                flex-basis:80px;
+                flex-grow:1;
+            }
         }
-        p:not(:first-of-type) {
-            border-left: 2px solid var(--text25);
-            padding-left: 5px;
+        .log{
+            background-color: var(--secondary20);
+            padding: 5px;
+            border-radius: 8px;
+            
+            P:first-of-type {
+                background-color: var(--primary);
+                border-radius: 5px;
+                padding: 2px 4px;
+                margin-right: 3px;
+            }
+            p:not(:first-of-type) {
+                align-self:center;
+                border-left: 2px solid var(--text25);
+                padding-left: 5px;
+            }
         }
     }
+
+    #device_list{
+        form, #devices {
+            background-color: var(--secondary20);
+            border-radius: 10px;
+            border: 1px solid var(--primary5);
+            padding: 5px;
+
+        }
+
+        form {
+            width: 100%;
+        }
+
+        #devices {
+            form {
+                #id{
+                    
+                    flex-grow: 1;
+                    flex-basis: 160px;
+                }
+                #model{
+                    flex-grow: 3;
+                    flex-basis: 200px;
+                }
+                button{
+                    flex-grow: 1;
+                    flex-basis: 80px;
+                }
+            }
+            .device {
+                padding: 5px 2px;
+                border-bottom: 1px solid var(--text25);
+                border-radius: 5px;
+                &:hover{
+                    background-color: var(--secondary25);
+                }
+            }
+        }
+    }
+    
 }

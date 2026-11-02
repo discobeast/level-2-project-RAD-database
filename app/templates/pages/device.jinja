@@ -14,6 +14,7 @@
 
 
 {% block content %}
+
     <div id="checklist">
         <form hx-post="/devices/{{device.id}}/checklist" id="checklist_form" hx-swap="none" hx-trigger="change">
             {% for check in device.checks %}

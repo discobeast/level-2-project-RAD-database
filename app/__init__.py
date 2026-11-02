@@ -17,7 +17,7 @@ import time
 app = Flask(__name__)
 
 def formatTime(timestamp):
-    return time.strftime("%d %B %Y %H:%M:%S", time.localtime(timestamp))
+    return time.strftime("%d/%m/%Y %H:%M:%S", time.localtime(timestamp))
 #===========================================================
 # App Routes Handlers
 #===========================================================
@@ -31,12 +31,12 @@ def hx_redirect(url):
 @app.route("/", methods=['GET','POST']) 
 def index():
     with connect_db() as db:
-        query = """SELECT computers.id, computers.model, MAX(work_done.timestamp) AS timestamp FROM computers LEFT JOIN work_done ON computers.id = work_done.computer GROUP BY computers.id, computers.model ORDER BY timestamp DESC"""
+        query = """SELECT computers.id, computers.model, MAX(work_done.timestamp) AS timestamp, work_done.user AS last_user FROM computers LEFT JOIN work_done ON computers.id = work_done.computer GROUP BY computers.id, computers.model ORDER BY timestamp DESC"""
         devices = db.execute(query).fetchall()
-        formatted_devices = []
         for device in devices:
             if device['timestamp']:
                 device['timestamp'] = formatTime(device['timestamp'])
+        print(devices)
     return render_template("pages/dashboard.jinja",devices=devices)
 
 @app.route("/devices/<id>", methods=['GET','POST'])
