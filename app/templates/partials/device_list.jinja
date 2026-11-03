@@ -2,6 +2,29 @@
     <a class="device status-{{device.id}}" href="/devices/{{device.id}}">
         <p class="code">{{device.id}}</p>
         <p class="model">{{device.model}}</p>
+        <div id="device-condition">
+            <details class="status-menu">
+                <summary class="status-badge status-{{ device.condition }}">
+                    {{ device.condition | capitalize }}
+                </summary>
+
+                <form class="status-options"
+                    hx-post="/devices/{{ device.id }}/condition"
+                    hx-target="#device-condition"
+                    hx-swap="outerHTML"
+                    hx-trigger="submit, update_condition from:body">
+                    {% if device.condition != "In Progress"%} 
+                        <button name="condition" value="In Progress" class="status-In Progress">In Progress</button>
+                    {% endif %}
+                    {% if device.condition != "Bricked"%} 
+                        <button name="condition" value="Bricked" class="status-Bricked">Bricked</button>
+                    {% endif %}
+                    {% if device.condition != "Completed"%} 
+                        <button name="condition" value="Completed" class="status-Completed">Completed</button>
+                    {% endif %}
+                </form>
+            </details>
+        </div>
         <p class="timestamp">Latest work done: {% if device.timestamp %}{{device.timestamp | format_human}} by {{device.last_user}}{% else %}Not started{% endif %}</p>
     </a>
 {% endfor %}

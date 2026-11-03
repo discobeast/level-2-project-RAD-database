@@ -1,17 +1,26 @@
-<div id="device-condition">
-    <details class="status-menu">
-        <summary class="status-badge status-{{ condition }}">
-            {{ condition | capitalize }}
-        </summary>
+    <div id="device-condition">
+        <details class="status-menu">
+            <summary class="status-badge status-{{ condition }}">
+                {{ condition | capitalize }}
+            </summary>
 
-        <form class="status-options"
-            hx-post="/devices/{{ id }}/condition"
-            hx-target="#device-condition"
-            hx-swap="outerHTML"
-            hx-trigger="submit, update_condition from:body">
-            <button name="condition" value="In Progress">In Progress</button>
-            <button name="condition" value="Bricked">Bricked</button>
-            <button name="condition" value="Completed">Completed</button>
-        </form>
-    </details>
-</div>
+            <form class="status-options"
+                hx-post="/devices/{{ id }}/condition"
+                hx-target="#device-condition"
+                hx-swap="outerHTML"
+                hx-trigger="submit, update_condition from:body">
+                {% if condition != "In Progress"%} 
+                    <button name="condition" value="In Progress" class="status-In Progress">In Progress</button>
+                {% endif %}
+                {% if condition != "Bricked"%} 
+                    <button name="condition" value="Bricked" class="status-Bricked">Bricked</button>
+                {% endif %}
+                {% if condition != "Completed"%} 
+                    <button name="condition" value="Completed" class="status-Completed">Completed</button>
+                {% endif %}
+                {# <button name="condition" value="In Progress" class="status-In Progress">In Progress</button>
+                <button name="condition" value="Bricked" class="status-Bricked">Bricked</button>
+                <button name="condition" value="Completed" class="status-Completed">Completed</button> #}
+            </form>
+        </details>
+    </div>

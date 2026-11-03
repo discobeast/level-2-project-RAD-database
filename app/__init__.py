@@ -16,8 +16,7 @@ import time
 # Create the app
 app = Flask(__name__)
 
-def formatTime(timestamp):
-    return time.strftime("%d/%m/%Y %H:%M:%S", time.localtime(timestamp))
+
 #===========================================================
 # App Routes Handlers
 #===========================================================

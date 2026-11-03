@@ -120,7 +120,11 @@ He also asked for a visual indication of when a device was last worked on and th
 
 ### Changes / Improvements
 
-The device menu now orders devices by the most recent
+The device menu now orders devices by the most recently worked on
+The per-device menu now has a status option to let the user decide the status of the device.
+This defaults to "Not worked on" and automatially switches to "In progress" whenever a worklog or checklist is updated.
+This status will be shown on the device dashboard with the user and timestamp associated with the last worklog
+I have added a active searchbar to help users find a specific device in the system without having to scroll.
 
 <!-- Replace this text with notes any improvements you made as a result of the testing.
 
@@ -128,6 +132,9 @@ The device menu now orders devices by the most recent
 
 
 ## Sprint Review
+
+This sprint has moved the project forward by adding accessability features and improving the UX for the users.
+
 <!-- 
 Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc. -->
 

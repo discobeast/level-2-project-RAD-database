@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Noto%20Kufi%20Arabic:700|Noto%20Kufi%20Arabic:400');
 :root {
+    --bricked: #e73131;
+    --complete: #41eb4f;
+    --started: #faab34;
+    --unstarted: #a0a0a0;
     --text: #dfe0fd;
     --bg: #26262b;
     --primary: #7c77f9;
@@ -114,7 +118,6 @@ form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-right:10px;
     flex-wrap: wrap;
     .checklist_item {
         width: 100%;
@@ -181,6 +184,7 @@ header{
         text-align:right;
     }
     margin-left:10px;
+    margin-right:10px;  
     margin-bottom: 10px;
     .mininav{
         flex-shrink: 0;
@@ -361,5 +365,49 @@ body{
             }
         }
     }
-    
+    .status-menu{
+        border-radius: 5px;
+        overflow: hidden;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        form{
+            gap:0px;
+            >button{
+                appearance: none;
+                border: none;
+                width: 100%;
+                &.status-Bricked{
+                background-color: var(--bricked);
+                }
+                &.status-Completed{
+                    background-color: var(--complete);
+                }
+                &.status-In.Progress{
+                    background-color: var(--started);
+                }
+                &.status-Not.started{
+                    background-color: var(--unstarted);
+                }
+                
+            }
+        }
+    }
+    .status-badge{
+        min-width: 80px;
+        padding:2px 5px;
+        &.status-Bricked{
+            background-color: var(--bricked);
+        }
+        &.status-Completed{
+            background-color: var(--complete);
+        }
+        &.status-In.Progress{
+            background-color: var(--started);
+        }
+        &.status-Not.started{
+            background-color: var(--unstarted);
+        }
+
+    }
 }

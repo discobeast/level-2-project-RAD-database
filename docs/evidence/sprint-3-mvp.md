@@ -20,51 +20,75 @@ Continue to develop the web application to the point that it provides all key fu
     - Add worklog
 
 
-## Testing FEATURE NAME HERE
-
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-![Placeholder](screenshots/placeholder.png)
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
-## Testing FEATURE NAME HERE
+## Device creation
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+<!-- Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing -->
+Testing the creation of a device
+Testing the creation of a duplicate device
+Testing the creation of a device with no ID or model
+
+Creation of a device normally goes smoothly,
+Creation of a duplicate device throws up an SQL unique error and 500 server error is shown
+Creation of a device with no ID creates a link to an empty device/ page which does not exist and the entry is not possible to delete due to the absence of its page.
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
+Testing device creation
+
+![Testing creations](<screenshots/Test device creation.gif>)
+
+Testing duplicate device creation
+
+![Testing duplicates](<screenshots/Test duplicate device.gif>)
+
+Testing device with empty values
+
+![Testing empty values](<screenshots/Test empty name device.gif>)
+
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+Improved device creation to prevent the creation of devices with duplicate ID's
+by adding checks to the logic.
+
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+Testing duplicate device creation
 
-## Testing FEATURE NAME HERE
+![Alt text](<screenshots/Test duplicate device 2.gif>)
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+Testing empty device information creation
+
+![Alt text](<screenshots/Test empty device id 2.gif>)
+
+
+## Testing Deletion
+
+I attempted to delete a device and its associated entries (worklog,checklist)
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
+![alt text](<screenshots/Test device deletion.gif>)
+
+While fixing I broke the deletion mechanisim due to an incorrect handling of the SQL query
+
+![alt text](<screenshots/Test device deletion 2.gif>)
+
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+Added line to DB.py to enable ON DELETE CASCADE in my SQLite database
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+![alt text](<screenshots/Test device deletion 3.gif>)
 
-## ETC...
+
+<!-- ## ETC... -->
 
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+I added errorchecking to my backend that will be benificial for finishing my project
 

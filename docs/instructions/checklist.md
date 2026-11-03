@@ -88,15 +88,15 @@ Use advanced techniques to develop a refined database means **all of the criteri
 Use advanced techniques to develop a digital media outcome means that, taking into account the problem / need and the end users:
 
 1. You must first define the purpose of your system and the end-users' needs:
-   - [ ] Define the **purpose of the system** that uses the database
-   - [ ] Describe the **needs of the end-users**
-   - [ ] Define the **key functionality** of the proposed system
+   - [x] Define the **purpose of the system** that uses the database
+   - [x] Describe the **needs of the end-users**
+   - [x] Define the **key functionality** of the proposed system
 
 2. You must use appropriate advanced tools and techniques, for example:
-   - [ ] You have used **non-core functionality** of tools / libraries (i.e. you have extended these beyond their supplied defaults)
-   - [ ] You have applied **industry standards or guidelines** (e.g. PEP 8 style guide for Python)
-   - [ ] Your UI uses a **responsive design** for use on multiple devices
-   - [ ] You have **integrated original media assets** into your work, as needed
+   - [x] You have used **non-core functionality** of tools / libraries (i.e. you have extended these beyond their supplied defaults)
+   - [x] You have applied **industry standards or guidelines** (e.g. PEP 8 style guide for Python)
+   - [x] Your UI uses a **responsive design** for use on multiple devices
+   - [x] You have **integrated original media assets** into your work, as needed
    - [x] You **handle data dynamically**, making your system interactive
    - [x] You have **automated aspects of your system** through scripts (e.g. Python)
 
@@ -118,8 +118,8 @@ Use advanced techniques to develop a digital media outcome means that, taking in
 Use advanced techniques to develop an informed digital media outcome means **all the criteria for Achieved**, plus:
 
 1. You should use information from testing procedures to improve the quality of your web site:
-   - [ ] Show **evidence of your testing**, particularly with end-users
-   - [ ] Show the **improvements made** as a result
+   - [x] Show **evidence of your testing**, particularly with end-users
+   - [x] Show the **improvements made** as a result
 
 2. You have used testing tools to help improve your web site:
    - [x] You have used **code validation** tools for generated HTML and CSS
@@ -142,7 +142,7 @@ Use advanced techniques to develop a refined digital media outcome means **all o
    - [x] Your git **commits are regular with descriptive commit messages**
    - [x] You have **effectively used tools** like DrawSQL, Figma, VS Code, Turso SQL editor, etc. to help develop the outcome
    - [x] You have made good use of **templates** (Jinja) to organise and structure content
-   - [ ] Your code is **commented** as needed
+   - [x] Your code is **commented** as needed
    - [ ] You have **optimised media assets** (e.g. image sizing)
 
 

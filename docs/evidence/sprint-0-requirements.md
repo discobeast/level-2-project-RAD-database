@@ -74,12 +74,12 @@ The End-Users are the people who will be using the website in practice
 
 ### Relevance to the System
 
-?
+The end-user is the going to be the actual users of the system so their consideration will be
+much more important than what I think would fit the system.
 
 ### Impact / Considerations
 
 My website must conform to the desires presented by the End-Users rather than what I see fit.
-
 
 ## Fuctionality
 

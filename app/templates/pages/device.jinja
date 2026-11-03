@@ -21,9 +21,15 @@
                 hx-target="#device-condition"
                 hx-swap="outerHTML"
                 hx-trigger="submit, update_condition from:body">
-                <button name="condition" value="In Progress">In Progress</button>
-                <button name="condition" value="Bricked">Bricked</button>
-                <button name="condition" value="Completed">Completed</button>
+                {% if device.condition != "In Progress"%} 
+                    <button name="condition" value="In Progress" class="status-In Progress">In Progress</button>
+                {% endif %}
+                {% if device.condition != "Bricked"%} 
+                    <button name="condition" value="Bricked" class="status-Bricked">Bricked</button>
+                {% endif %}
+                {% if device.condition != "Completed"%} 
+                    <button name="condition" value="Completed" class="status-Completed">Completed</button>
+                {% endif %}
             </form>
         </details>
     </div>
