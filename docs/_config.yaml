@@ -1,7 +1,7 @@
-title: Flask Project Template
-description: A starter Flask, Jinja and SQLite project
-author: Digital Technologies Dept.
+title: RAD database
+description: A database for the RAD people
+author: Jesse Vanw Wyk
 
 # If development is true, guides will be shown
-development: true
-picotheme: azure
+development: false
+picotheme: black

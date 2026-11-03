@@ -80,7 +80,7 @@ class workDoneTable:
             computer  TEXT    REFERENCES computers (id) ON DELETE CASCADE,
             user      TEXT,
             notes     TEXT,
-            timestamp INTEGER
+            timestamp TEXT DEFAULT CURRENT_TIMESTAMP
         );
     """
 

@@ -298,7 +298,7 @@ body{
                 flex-basis:200px;
                 flex-grow:3;
             }
-            input[type=submit]{
+            button{
                 flex-basis:80px;
                 flex-grow:1;
             }

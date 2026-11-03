@@ -1,6 +1,6 @@
 #===========================================================
-# PROJECT NAME HERE
-# By YOUR NAME HERE
+# Rad database
+# By Jesse
 #===========================================================
 
 from flask import Flask, request, session, render_template, flash, redirect, send_file, make_response, url_for
@@ -30,14 +30,20 @@ def hx_redirect(url):
 
 @app.route("/", methods=['GET','POST']) 
 def index():
+    return render_template("pages/dashboard.jinja")
+
+@app.post("/devices/")
+def devices():
+    term = f"%{request.form['query']}%"
+    if not term:
+        term = "%%"
     with connect_db() as db:
-        query = """SELECT computers.id, computers.model, MAX(work_done.timestamp) AS timestamp, work_done.user AS last_user FROM computers LEFT JOIN work_done ON computers.id = work_done.computer GROUP BY computers.id, computers.model ORDER BY timestamp DESC"""
-        devices = db.execute(query).fetchall()
-        for device in devices:
-            if device['timestamp']:
-                device['timestamp'] = formatTime(device['timestamp'])
-        print(devices)
-    return render_template("pages/dashboard.jinja",devices=devices)
+        query = """SELECT computers.id, computers.model, MAX(work_done.timestamp) AS timestamp, work_done.user AS last_user FROM computers LEFT JOIN work_done ON computers.id = work_done.computer WHERE computers.id LIKE ? OR computers.model LIKE ? OR last_user LIKE ? GROUP BY computers.id, computers.model ORDER BY timestamp DESC"""
+        devices = db.execute(query,(term,term,term)).fetchall()
+    if len(devices) == 1:
+        return hx_redirect(url_for('device_page',id=devices[0]["id"]))
+    else:
+        return render_template("partials/device_list.jinja",devices=devices)
 
 @app.route("/devices/<id>", methods=['GET','POST'])
 def device_page(id):
@@ -60,8 +66,6 @@ def device_page(id):
 
         query = "SELECT user,notes,timestamp FROM work_done WHERE computer = ?;"
         worklog = db.execute(query,args).fetchall()
-        for log in worklog:
-            log['timestamp'] = formatTime(log['timestamp'])
             
         device['worklogs'] = worklog
         return render_template("pages/device.jinja", device=device)
@@ -76,8 +80,8 @@ def device_update_checklist(id):
         values = ""
         for check in checks:
             check = check['id']
-            note = request.form.get(f"{check}-notes","").strip()
-            state = 1 if request.form.get(f"{check}-check_passed",0) == 'on' else 0
+            note = data.get(f"{check}-notes","").strip()
+            state = 1 if data.get(f"{check}-check_passed") == 'on' else 0
             args.append(id)
             args.append(state)
             args.append(note)
@@ -86,28 +90,30 @@ def device_update_checklist(id):
                 values += "(?,?,?,?),"
             else:
                 values += "(?,?,?,?)"
-        
-
 
         query = f"""INSERT INTO status (computer,outcome,notes,"check")
                     VALUES {values} ON CONFLICT (computer, "check")
                     DO UPDATE SET outcome = excluded.outcome, 
                     notes = excluded.notes"""
-        print(query)
         db.execute(query,tuple(args))
         return make_response("",200)
 
-@app.post("/devices/<id>/worklog")
+
+@app.route("/devices/<id>/worklog",methods=["GET","POST"])
 def device_update_worklog(id):
-    with connect_db() as db:
-        name = request.form['name']
-        notes = request.form['notes']
-        query = """INSERT INTO work_done (computer,user,notes,timestamp) VALUES (?,?,?,?);"""
-        # formatted_time = time.strftime("%d %B %Y %H:%M:%S", time.localtime(time.time()))
-        log_time = time.time()
-        args = (id,name,notes,log_time)
-        db.execute(query,args)
-    return redirect(url_for('device_page',id = id))
+    if request.method == "POST":
+        with connect_db() as db:
+            name = request.form['name']
+            notes = request.form['notes']
+            query = """INSERT INTO work_done (computer,user,notes) VALUES (?,?,?);"""
+            args = (id,name,notes)
+            db.execute(query,args)
+        return ""
+    else:
+        with connect_db() as db:
+            worklog = db.execute("SELECT user,notes,timestamp FROM work_done WHERE computer = ?;",(id,)).fetchall()
+        return render_template("partials/logs.jinja",worklogs = worklog)
+
 
 @app.post("/devices/new")
 def new_device():
@@ -127,7 +133,6 @@ def new_device():
             return render_template('partials/form.jinja',message="Device with this ID already exists.",status="error",id=id,model=model)
 
 
-
 @app.get("/devices/<id>/delete")
 def delete_device(id):
     if request.args.get("confirmed", False):
@@ -140,9 +145,8 @@ def delete_device(id):
         return resp
     else:
         return render_template('partials/delete.jinja',id=id )
-
-
-
+    
+    
 
 #===========================================================
 # Configure the app

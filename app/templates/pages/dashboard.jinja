@@ -6,6 +6,7 @@
 
 {% block content %}
     <div id="device_list">
+        <input type="search" name="query" id="query" hx-post="/devices/" hx-trigger="load,input changed delay:500ms" hx-target="#devices" hx-swap="innerhtml" placeholder="Search">
         <form hx-post="/devices/new" hx-swap="outerHTML">
             <input type="text" name="id" id="id" placeholder="ID" required>
             <input type="text" name="model" id="model" placeholder="Model" required>
@@ -13,13 +14,6 @@
         </form>
 
         <div id="devices">
-            {% for device in devices %}
-                <a class="device status-{{device.id}}" href="/devices/{{device.id}}">
-                    <p class="code">{{device.id}}</p>
-                    <p class="model">{{device.model}}</p>
-                    <p class="timestamp">Latest work done: {% if device.timestamp %}{{device.timestamp}} by {{device.last_user}}{% else %}Not started{% endif %}</p>
-                </a>
-            {% endfor %}
         </div>
     </div>
 {% endblock  %}

@@ -1,0 +1,7 @@
+{% for device in devices %}
+    <a class="device status-{{device.id}}" href="/devices/{{device.id}}">
+        <p class="code">{{device.id}}</p>
+        <p class="model">{{device.model}}</p>
+        <p class="timestamp">Latest work done: {% if device.timestamp %}{{device.timestamp | format_human}} by {{device.last_user}}{% else %}Not started{% endif %}</p>
+    </a>
+{% endfor %}
