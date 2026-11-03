@@ -6,11 +6,16 @@
 
 {% block content %}
     <div id="device_list">
-        <input type="search" name="query" id="query" hx-post="/devices/" hx-trigger="load,input changed delay:500ms" hx-target="#devices" hx-swap="innerhtml" placeholder="Search">
-        <form hx-post="/devices/new" hx-swap="outerHTML">
+        <form hx-post="/devices/new" hx-swap="outerHTML" id="device_creation">
             <input type="text" name="id" id="id" placeholder="ID" required>
             <input type="text" name="model" id="model" placeholder="Model" required>
-            <button type="submit">Submit</button>
+            <button type="submit">Create device</button>
+        </form>
+
+        <form hx-post="/devices/" hx-trigger="load, input changed from:#search_bar>#query delay:500ms,change from:#search_bar>input[type=checkbox]" hx-target="#devices" hx-swap="innerhtml" id="search_bar">
+            <input type="search" name="query" id="query" placeholder="Search">
+            <input type="checkbox" name="filter_unloved" id="unloved">
+            <input type="checkbox" name="filter_bricked" id="bricked">
         </form>
 
         <div id="devices">

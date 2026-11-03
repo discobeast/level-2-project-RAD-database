@@ -1,0 +1,17 @@
+<div id="device-condition">
+    <details class="status-menu">
+        <summary class="status-badge status-{{ condition }}">
+            {{ condition | capitalize }}
+        </summary>
+
+        <form class="status-options"
+            hx-post="/devices/{{ id }}/condition"
+            hx-target="#device-condition"
+            hx-swap="outerHTML"
+            hx-trigger="submit, update_condition from:body">
+            <button name="condition" value="In Progress">In Progress</button>
+            <button name="condition" value="Bricked">Bricked</button>
+            <button name="condition" value="Completed">Completed</button>
+        </form>
+    </details>
+</div>

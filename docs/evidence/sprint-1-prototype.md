@@ -120,7 +120,7 @@ He also asked for a visual indication of when a device was last worked on and th
 
 ### Changes / Improvements
 
-Changed worklog storage of timestamp from text to an integer
+The device menu now orders devices by the most recent
 
 <!-- Replace this text with notes any improvements you made as a result of the testing.
 

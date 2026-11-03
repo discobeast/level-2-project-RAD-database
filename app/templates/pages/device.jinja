@@ -10,6 +10,23 @@
         <h1>{{device.id}}</h1>
     </div>
     <h2>{{device.model}}</h2>
+    <div id="device-condition">
+        <details class="status-menu">
+            <summary class="status-badge status-{{ device.condition }}">
+                {{ device.condition | capitalize }}
+            </summary>
+
+            <form class="status-options"
+                hx-post="/devices/{{ device.id }}/condition"
+                hx-target="#device-condition"
+                hx-swap="outerHTML"
+                hx-trigger="submit, update_condition from:body">
+                <button name="condition" value="In Progress">In Progress</button>
+                <button name="condition" value="Bricked">Bricked</button>
+                <button name="condition" value="Completed">Completed</button>
+            </form>
+        </details>
+    </div>
 {% endblock header %}
 
 
@@ -35,7 +52,7 @@
             <textarea name="notes" id="notes" placeholder="Notes.." required></textarea>
             <button type="submit">Submit</button>
         </form>
-        <div id="logs" hx-get="/devices/{{ device.id }}/worklog" hx-trigger="submit from:#worklogs>form delay:0.1s,load,every 2s [!document.hidden]">
+        <div id="logs" hx-get="/devices/{{ device.id }}/worklog" hx-trigger="submit from:#worklogs>form delay:0.1s,load,every 20s [!document.hidden]">
         </div>
     </div>
     <div hx-confirm="Are you sure?" id="delete_device">

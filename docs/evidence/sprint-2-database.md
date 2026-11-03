@@ -16,12 +16,12 @@ Implement the database, populated with test data. Create queries that retrieve t
     - Test pages for each type of check
     - Final checklist for device
 - Develop SQL database queries to:
-    - return a numerical status once a predetermined set of conditions has been met within a device's data
     - filter a list of devices, given queries
     - Store and manage the worklogs of devices
+    - delete devices
 
 
-## Testing 
+## Device creation
 
 <!-- Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing -->
 Testing the creation of a device
@@ -50,31 +50,41 @@ by adding checks to the logic.
 ![Alt text](<screenshots/Test empty device id 2.gif>)
 
 
-## Device deletion
+## Active search
 
-Testing deleting devices by deleting an entry from the database
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
-
-
-## Testing FEATURE NAME HERE
-
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+Test active search by searching 14022 slowly
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
+![alt text](<screenshots/Test active search.gif>)
+
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I forgot the enclosing % signs in the sql query so the wildcard was not working
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+![alt text](<screenshots/Test active search 2.gif>)
+
+## Testing Deletion
+
+I attempted to delete a device and its associated entries (worklog,checklist)
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+![alt text](<screenshots/Test device deletion.gif>)
+
+While fixing I broke the deletion mechanisim due to an incorrect handling of the SQL query
+
+![alt text](<screenshots/Test device deletion 2.gif>)
+
+### Changes / Improvements
+
+Added line to DB.py to enable ON DELETE CASCADE in my SQLite database
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+
+![alt text](<screenshots/Test device deletion 3.gif>)
 
 ## ETC...
 

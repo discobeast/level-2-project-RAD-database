@@ -22,7 +22,8 @@ class deviceTable:
     SCHEMA = """
     CREATE TABLE computers (
         id    TEXT PRIMARY KEY,
-        model TEXT
+        model TEXT,
+        condition TEXT DEFAULT 'Not started'
     );
     """
 
