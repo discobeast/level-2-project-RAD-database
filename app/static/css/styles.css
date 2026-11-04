@@ -100,26 +100,10 @@
     --accent95: hsl(334, 91%, 60%, 95%);
 }
 
-body {
-    
-    padding: 10px;
-}
-
-main {
+/* main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-#checklist {
-    margin: 0 10px;
-    padding: 10px;
-}
-
-#checklist form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
 }
 
 .checklist_item {
@@ -236,11 +220,6 @@ header h2 {
     flex: 1 1 80px;
 }
 
-#devices {
-    display: flex;
-    flex-direction: column;
-}
-
 .device-row {
     display: flex;
     align-items: center;
@@ -267,8 +246,8 @@ header h2 {
 }
 
 
-/* Colors */
 body{
+    padding:10px;
     a {text-decoration: none;}
     background-color: var(--bg);
     h1, h2{
@@ -288,6 +267,11 @@ body{
     }
 
     #checklist{
+        margin: 0 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
         .checklist_item {
             background-color: var(--secondary20);
             padding:5px;
@@ -361,29 +345,14 @@ body{
         }
 
         #devices {
-            form {
-                #id{
-                    
-                    flex-grow: 1;
-                    flex-basis: 160px;
-                }
-                #model{
-                    flex-grow: 3;
-                    flex-basis: 200px;
-                }
-                button{
-                    flex-grow: 1;
-                    flex-basis: 80px;
-                }
-            }
-            .device {
-                padding: 0;
-            }
+            display: flex;
+            flex-direction: column;
             .device-row {
                 padding: 5px 2px;
             }
         }
     }
+    
     .status-menu{
         border-radius: 5px;
         overflow: hidden;
@@ -413,6 +382,7 @@ body{
             }
         }
     }
+
     .status-badge{
         color: var(--bg);
         min-width: 80px;
@@ -431,6 +401,7 @@ body{
         }
 
     }
+
     #search_bar{
         display:flex;
         flex-direction: row;
@@ -445,4 +416,53 @@ body{
             padding: 2px 5px;
         }
     }
+} */
+
+main{
+    display:flex;
+    flex-direction:column;
+    #device_creation{
+        display:flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        #id{
+            flex: 1 1 160px;
+        }
+        #model{
+            flex: 3 1 200px;
+        }
+        button{
+            flex: 1 1 80px;
+        }
+    }
+
+    #search_bar{
+        display:flex;
+        flex-direction:row;
+        align-content:center;
+        gap:5px;
+        #query{
+            margin-right:10px;
+        }
+    }
+
+
+    #devices{
+        display:flex;
+        flex-direction: column;
+        gap:5px;
+        .device-row{
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+            gap:10px;
+            .device{
+                display:flex;
+                flex-direction:row;
+                gap:10px;
+                margin-right:auto;
+            }
+        }
+    }
+    
 }

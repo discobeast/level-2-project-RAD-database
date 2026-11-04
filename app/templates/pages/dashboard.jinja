@@ -5,35 +5,36 @@
 {% endblock header %}
 
 {% block content %}
-    <div id="device_list">
-        <form hx-post="/devices/new" hx-swap="outerHTML" id="device_creation">
-            <input type="text" name="id" id="id" placeholder="ID" required>
-            <input type="text" name="model" id="model" placeholder="Model" required>
-            <button type="submit">Create device</button>
-        </form>
+    <form hx-post="/devices/new" hx-swap="outerHTML" id="device_creation">
+        <input type="text" name="id" id="id" placeholder="ID" required>
+        <input type="text" name="model" id="model" placeholder="Model" required>
+        <button type="submit">Create device</button>
+    </form>
 
-        <form hx-post="/devices/" hx-trigger="load, input changed from:#search_bar>#query delay:500ms,change from:#search_bar>label>input[type=checkbox]" hx-target="#devices" hx-swap="innerhtml" id="search_bar">
-            <input type="search" name="query" id="query" placeholder="Search">
-            <label>
-                <input type="checkbox" name="filter_unloved" id="filter_unloved">
-                Not started
-            </label>
-            <label>
-                <input type="checkbox" name="filter_bricked" id="filter_bricked">
-                Bricked
-            </label>
-            <label>
-                <input type="checkbox" name="filter_started" id="filter_started">
-                In Progress
-            </label>
-            <label>
-                <input type="checkbox" name="filter_completed" id="filter_completed">
-                Completed
-            </label>
-        </form>
+    <form hx-post="/devices/" 
+        hx-trigger="load, input changed from:#search_bar>#query delay:500ms,change from:#search_bar>label>input[type=checkbox]" 
+        hx-target="#devices" 
+        hx-swap="innerhtml" 
+        id="search_bar">
+        <input type="search" name="query" id="query" placeholder="Search">
+        <label>
+            <input type="checkbox" name="filter_unloved" id="filter_unloved">
+            Not started
+        </label>
+        <label>
+            <input type="checkbox" name="filter_bricked" id="filter_bricked">
+            Bricked
+        </label>
+        <label>
+            <input type="checkbox" name="filter_started" id="filter_started">
+            In Progress
+        </label>
+        <label>
+            <input type="checkbox" name="filter_completed" id="filter_completed">
+            Completed
+        </label>
+    </form>
 
-        <div id="devices">
-        </div>
-    </div>
+    <div id="devices"></div>
 {% endblock  %}
 
