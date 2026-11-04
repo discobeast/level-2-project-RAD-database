@@ -1,4 +1,4 @@
-    <div id="device-condition">
+    <div class="device-condition">
         <details class="status-menu">
             <summary class="status-badge status-{{ condition }}">
                 {{ condition | capitalize }}
@@ -6,7 +6,7 @@
 
             <form class="status-options"
                 hx-post="/devices/{{ id }}/condition"
-                hx-target="#device-condition"
+                hx-target="closest .device-condition"
                 hx-swap="outerHTML"
                 hx-trigger="submit, update_condition from:body">
                 {% if condition != "In Progress"%} 

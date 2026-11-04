@@ -103,14 +103,7 @@ class statusTable:
     );
     """
 
-    SEED_DATA = """
-    INSERT INTO status (id,computer,outcome,notes,`check`)
-    VALUES 
-    (1, 'RAD14022', 1, NULL, 1),
-    (2, 'RAD14022', 0, NULL, 2),
-    (3, 'RAD14022', 1, NULL, 3),
-    (4, 'RAD14022', 1, NULL, 4)
-    
+    SEED_DATA = """    
     """
 
 class checksTable:

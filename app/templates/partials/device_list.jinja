@@ -1,8 +1,10 @@
 {% for device in devices %}
-    <a class="device status-{{device.id}}" href="/devices/{{device.id}}">
-        <p class="code">{{device.id}}</p>
-        <p class="model">{{device.model}}</p>
-        <div id="device-condition">
+    <div class="device-row">
+        <a class="device status-{{device.id}}" href="/devices/{{device.id}}">
+            <p class="code">{{device.id}}</p>
+            <p class="model">{{device.model}}</p>
+        </a>
+        <div class="device-condition">
             <details class="status-menu">
                 <summary class="status-badge status-{{ device.condition }}">
                     {{ device.condition | capitalize }}
@@ -10,7 +12,7 @@
 
                 <form class="status-options"
                     hx-post="/devices/{{ device.id }}/condition"
-                    hx-target="#device-condition"
+                    hx-target="closest .device-condition"
                     hx-swap="outerHTML"
                     hx-trigger="submit, update_condition from:body">
                     {% if device.condition != "In Progress"%} 
@@ -25,6 +27,8 @@
                 </form>
             </details>
         </div>
-        <p class="timestamp">Latest work done: {% if device.timestamp %}{{device.timestamp | format_human}} by {{device.last_user}}{% else %}Not started{% endif %}</p>
-    </a>
+        <a class="device-timestamp" href="/devices/{{device.id}}">
+            <p class="timestamp">Latest log: {% if device.timestamp %}{{device.timestamp | format_human}} by {{device.last_user}}{% else %}No logs{% endif %}</p>
+        </a>
+    </div>
 {% endfor %}

@@ -21,12 +21,15 @@ app = Flask(__name__)
 # App Routes Handlers
 #===========================================================
 
-#Helper function to redirect with HTMX
+#Helper functions-------------------------------------------------------
+
 #HTMX redirect is smoother than form (Normal) redirect and allows HTMX functions to finish before redirect
 def hx_redirect(url):
     resp = make_response()
     resp.headers['HX-Redirect'] = url
     return resp
+
+#------------------------------------------------------------------------
 
 def make_device_active(id,db):
     query = "UPDATE computers SET condition = 'In Progress' WHERE id = ? AND condition = 'Not started';"
@@ -48,8 +51,9 @@ def index():
 def devices():
 
     unloved = True if request.form.get('filter_unloved') else False
-
     bricked = True if request.form.get('filter_bricked') else False
+    started = True if request.form.get('filter_started') else False
+    completed = True if request.form.get('filter_completed') else False
 
     #In the case that term is somehow NONE term is blank
     term = f"%{request.form['query']}%"
@@ -57,9 +61,13 @@ def devices():
         term = "%%"
     with connect_db() as db:
         query = f"""
-                    SELECT computers.id, computers.model, MAX(work_done.timestamp) AS timestamp, work_done.user AS last_user FROM computers 
+                    SELECT computers.id, computers.model, MAX(work_done.timestamp) AS timestamp, work_done.user AS last_user, computers.condition FROM computers 
                     LEFT JOIN work_done ON computers.id = work_done.computer 
-                    WHERE (computers.id LIKE ? OR computers.model LIKE ? OR last_user LIKE ?) {"AND timestamp IS NULL" if unloved else ""}
+                    WHERE (computers.id LIKE ? OR computers.model LIKE ? OR last_user LIKE ?) 
+                    {"AND computers.condition = 'Not started' " if unloved else ""} 
+                    {"AND computers.condition = 'Bricked' " if bricked else ""}
+                    {"AND computers.condition = 'In Progress' " if started else ""}
+                    {"AND computers.condition = 'Completed' " if completed else ""}
                     GROUP BY computers.id, computers.model 
                     ORDER BY timestamp DESC
                 """
@@ -151,7 +159,7 @@ def device_update_worklog(id):
             query = """INSERT INTO work_done (computer,user,notes) VALUES (?,?,?);"""
             args = (id,name,notes)
             db.execute(query,args)
-        return make_device_active(id,db) #Again, return nothing because we dont want the page to refresh (Anything that needs to update refreshes automatically)
+            return make_device_active(id,db) #Again, return nothing because we dont want the page to refresh (Anything that needs to update refreshes automatically)
 
     #Assume we are trying to render the log entries for this device
     else:
