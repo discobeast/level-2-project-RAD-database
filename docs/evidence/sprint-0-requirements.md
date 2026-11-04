@@ -13,6 +13,7 @@ made on any given computer.
 My program should allow the visibility of the progress made on all devices in RAD at a glance and provide the ability to more accurately track who last worked on any given device.
 
 requirements:
+
     Single view showing everything important as soon as the app opens.
     
     Clearly shows what needs to be done vs. what has already been done.

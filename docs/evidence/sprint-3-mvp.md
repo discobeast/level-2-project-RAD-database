@@ -52,7 +52,6 @@ Testing device with empty values
 Improved device creation to prevent the creation of devices with duplicate ID's
 by adding checks to the logic.
 
-
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 Testing duplicate device creation
@@ -85,10 +84,32 @@ Added line to DB.py to enable ON DELETE CASCADE in my SQLite database
 ![alt text](<screenshots/Test device deletion 3.gif>)
 
 
+## Testing worklog creation
+
+<!-- Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing -->
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+### Changes / Improvements
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+
+
 <!-- ## ETC... -->
 
 
 ## Sprint Review
 
-I added errorchecking to my backend that will be benificial for finishing my project
 
+
+
+
+<!-- ## Test
+
+<!-- Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing -->
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+### Changes / Improvements
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE** -->

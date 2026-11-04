@@ -21,6 +21,7 @@ Develop a design for the database and a UI prototype that simulates the key func
     - Page layouts / features
     - Colour palette
     - Etc. -->
+
 - Design the database:
     - Tables
     - Fields / types
@@ -32,7 +33,6 @@ Develop a design for the database and a UI prototype that simulates the key func
     - User interactions and 'flow'
     - Page layouts / features
     - Colour palette
-    - Etc.
 
 
 ## Initial Database Design
@@ -135,6 +135,5 @@ I have added a active searchbar to help users find a specific device in the syst
 
 This sprint has moved the project forward by adding accessability features and improving the UX for the users.
 
-<!-- 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc. -->
+<!-- Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc. -->
 

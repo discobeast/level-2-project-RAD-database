@@ -43,16 +43,41 @@ The second issue was adressed by making the function to update the device status
 ![alt text](<screenshots/Test Pill 3.gif>)
 
 
-## Testing Device dashboard display pill
+## Testing Device dashboard filter pill
+
+Im trying to make the filters take up less room by storing them in a pill when not needed
+However making this pill was harder than expected
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
+![alt text](<screenshots/Filter pill .gif>)
+
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+to make it work I had to absolutely position the element and create the illusion of a clip by using clip-path
+and using transition to interpolate it. the filter pill and filters are effectively seperate elements but share an overlapping background which creates the illusion
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+![alt text](<screenshots/Filter pill 2.gif>)
+
+
+## Testing Device status pill
+
+For some reason, when I expand the condition pill, the element gains a larger width which is not intended
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+![alt text](<screenshots/Status pill.gif>)
+
+### Changes / Improvements
+
+to fix this, i made the internal form element a flex element with a collumn and a width set to 100%
+this fixes the issue so the element now does not change size
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+
+![alt text](<screenshots/status pill 2.gif>)
 
 ## Testing FEATURE NAME HERE
 

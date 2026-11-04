@@ -45,7 +45,7 @@ Went to the index page which should load all the devices
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
-This failed because of an error in the SQL query regarding arguments being passed into it
+This failed because of an error in the SQL query regarding the amount of arguments being passed into the query
 
 ### Changes / Improvements
 
