@@ -12,7 +12,8 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
  - Finish sprint 0 - 3
  - Finish Website color scheme
  - Finalize website structure
- - Add worklog deletion 
+ - ~~Add worklog deletion~~ 
+ - Add device conditions
 
 
 ## Testing Status Pill
@@ -72,14 +73,14 @@ For some reason, when I expand the condition pill, the element gains a larger wi
 
 ### Changes / Improvements
 
-to fix this, i made the internal form element a flex element with a collumn and a width set to 100%
+to fix this, i made the internal form element a flex element with a column and a width set to 100%
 this fixes the issue so the element now does not change size
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 ![alt text](<screenshots/status pill 2.gif>)
 
-## Testing FEATURE NAME HERE
+<!-- ## Testing FEATURE NAME HERE
 
 Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
 
@@ -92,10 +93,11 @@ Replace this text with notes any improvements you made as a result of the testin
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
-## ETC...
+## ETC... -->
 
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+This sprint added some nice cosmetic and accesability features that Im sure will be apreciated by the end-users.
+The filter specifically gave me hell but I think was worth it in the end.
 

@@ -72,4 +72,5 @@ Fixed this issue and the webpage now loads
 
 
 ## Sprint Review
-Added the device menu querys and the homepage filter query
+This sprint let me work on my SQLite skills and created the basis of all the features in the next sprints.  
+The filter query specifically was fun to work on.

@@ -39,6 +39,7 @@ Due to this the site will have the ability to register and keep track of users, 
 
 # Relevant Implications
 
+
 ## Usability
 
 A website with good usability would allow anyone to navigate and use it effectively.
@@ -81,6 +82,7 @@ much more important than what I think would fit the system.
 ### Impact / Considerations
 
 My website must conform to the desires presented by the End-Users rather than what I see fit.
+
 
 ## Fuctionality
 

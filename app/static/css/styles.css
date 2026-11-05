@@ -252,6 +252,7 @@ main{
                 position:absolute;
                 white-space: nowrap;
                 display: flex;
+                flex-wrap: wrap;
                 align-items: center;
                 gap:5px;
                 clip-path: inset(0 100% 0 0);
@@ -262,6 +263,7 @@ main{
                 transition: clip-path 0.5s ease, content-visibility 500ms allow-discrete;
             }
             &[open]::details-content{
+                position: static;
                 clip-path: inset(0);
             }
             background-color: var(--primary);

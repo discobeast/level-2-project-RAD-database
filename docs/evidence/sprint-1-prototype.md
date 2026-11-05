@@ -134,6 +134,7 @@ I have added a active searchbar to help users find a specific device in the syst
 ## Sprint Review
 
 This sprint has moved the project forward by adding accessability features and improving the UX for the users.
+I don't feel that I had enough contanct with my stakeholder and I fear that this will affect my documentation in the future.
 
 <!-- Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc. -->
 

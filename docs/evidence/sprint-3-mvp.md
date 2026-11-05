@@ -50,7 +50,7 @@ Testing device with empty values
 ### Changes / Improvements
 
 Improved device creation to prevent the creation of devices with duplicate ID's
-by adding checks to the logic.
+by adding checks to the logic and added systems to prevent devices with an empty ID from being created
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
@@ -88,28 +88,44 @@ Added line to DB.py to enable ON DELETE CASCADE in my SQLite database
 
 <!-- Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing -->
 
+Im creating a test worklog
+
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+![alt text](<screenshots/Test worklog.gif>)
 
 ### Changes / Improvements
 
+The timestamp was stored as a INTEGER rather than TEXT in the SQL database which created an error when the log was sent to the server.
+This was fixed
+
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+![alt text](<screenshots/Test worklog 2.gif>)
+
+
+## Test auto checklist
+
+Im testing the auto submitting checklist by ticking a box and reloading a page and then adding a note and reloading the page
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+![alt text](<screenshots/Test checklist.gif>)
+
+### Changes / Improvements
+
+The checklist HTMX was replacing itself with the response from the server, by adding the tag hx-swap=none this fixed the issue
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE** 
+
+![alt text](<screenshots/Test checklist 2.gif>)
 
 <!-- ## ETC... -->
 
 
 ## Sprint Review
+This sprint pushed my project forward by adding some features aboslutely nessasary for my project and its usefulness
 
 
 
 
-
-<!-- ## Test
-
-<!-- Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing -->
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-### Changes / Improvements
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE** -->
